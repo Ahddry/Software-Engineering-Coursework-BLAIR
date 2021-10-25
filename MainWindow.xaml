@@ -3,31 +3,57 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Coursework1"
+        xmlns:local="clr-namespace:Coursework1" xmlns:view_models="clr-namespace:Coursework1.UI.View_Models"
         mc:Ignorable="d"
         WindowStyle="None"
         Background="Transparent"
-        ResizeMode="CanResizeWithGrip" 
+        ResizeMode="CanResizeWithGrip"
         AllowsTransparency="True"
-        Title="MainWindow" Height="450" Width="800">
-    <Border Background="#2D2D30"
-            CornerRadius="20">
+        Title="NBM"  Height="450" Width="800" MinHeight="275" MinWidth="350">
+    
+    <Window.DataContext>
+        <view_models:BaseViewModel/>
+    </Window.DataContext>
+    <Border Background="#2A2A2C">
         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" MaxWidth="200"/>
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-
-            <!--Column 1-->
-            <DockPanel Grid.Column="0" Margin="5 5" Background="#2D2D30">
+            <Border Grid.ColumnSpan="2" Background="#1E1E1E" MouseDown="DragBorder">
+                <Grid HorizontalAlignment="Stretch">
+                    <Label Content="NBM" Foreground="White"
+                           FontWeight="SemiBold" Margin="5 0"/>
+                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                        <Button Width="20" Height="20" Content="–" Background="Transparent" 
+                                BorderThickness="0" Foreground="Gray" FontWeight="Bold"
+                                Click="MinimizeWindow"/>
+                        <Button Width="20" Height="20" Content="□" Background="Transparent" 
+                                BorderThickness="0" Foreground="Gray" FontWeight="Bold" 
+                                Click="MaximizeWindow"/>
+                        <Button Width="20" Height="20" Content="✕" Background="Transparent" 
+                                BorderThickness="0" Foreground="Gray" FontWeight="Normal"
+                                Click="CloseWindow"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Grid Grid.Column="0" Grid.Row="1" Background="#2D2D30">
                 <StackPanel>
-                    <Button Content="{Binding AddOrderButtonContent}" Command="{Binding AddOrderButtonCommand}" Margin="2 2 2 10" Background=" #333333" Foreground="White"/>
-                    <Button Content="{Binding ViewOrderButtonContent}" Command="{Binding ViewOrderButtonCommand}" Margin="2 2 2 10" Background=" #333333" Foreground="White"/>
+                    <RadioButton Content="Home" Height="50" Foreground="White" FontSize="14" Command="{Binding HomeCommand}" IsChecked="True"/>
+                    <RadioButton Content="New message" Height="50" Foreground="White" Command="{Binding NewMessageCommand}" FontSize="14"/>
+                    <RadioButton Content="Import messages" Height="50" Foreground="White" Command="{Binding ImportMessagesCommand}" FontSize="14"/>
+                    <RadioButton Content="Read messages" Height="50" Foreground="White" Command="{Binding ReadMessagesCommand}" FontSize="14"/>
                 </StackPanel>
-            </DockPanel>
-
-            <!--Column 2-->
-            <ContentControl Content="{Binding ContentControlBinding}" Grid.Column="1" Margin="5 5"/>
+                <StackPanel VerticalAlignment="Bottom">
+                    <Button Content="Quit" Height="50" Foreground="White" FontSize="14"
+                            Background="Transparent" VerticalAlignment="Bottom" BorderThickness="0" Click="CloseWindow"/>
+                </StackPanel>
+            </Grid>
+            <ContentControl Content="{Binding ContentControlBinding}" Grid.Column="1" Grid.Row="1" Margin="5 5"/>
         </Grid>
     </Border>
 </Window>

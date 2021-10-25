@@ -7,12 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Core\" />
     <Folder Include="Other\" />
     <Folder Include="UI\Model\" />
-    <Folder Include="UI\Theme\" />
-    <Folder Include="UI\View Model\" />
-    <Folder Include="UI\View\" />
+    <Folder Include="UI\Images\" />
   </ItemGroup>
 
 </Project>

@@ -20,3 +20,14 @@ C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Course
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\ref\Coursework1.dll
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\Coursework1.pdb
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\Coursework1.genruntimeconfig.cache
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\Theme\MenuButton.baml
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\App.baml
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\HomeView.g.cs
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\HomeView.baml
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\ImportMessagesView.g.cs
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\NewMessageView.g.cs
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\ReadMessagesView.g.cs
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\ImportMessagesView.baml
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\NewMessageView.baml
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\ReadMessagesView.baml

@@ -7,7 +7,36 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="UI\View\HomeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\View\ImportMessagesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\View\NewMessageView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\View\ReadMessagesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\Theme\MenuButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\View\HomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\View\ImportMessagesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\View\NewMessageView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\View\ReadMessagesView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
