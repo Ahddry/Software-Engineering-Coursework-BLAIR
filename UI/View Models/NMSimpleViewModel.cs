@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Coursework1.UI.View_Models
 {
-    public class ReadMessagesViewModel
+    public class NMSimpleViewModel
     {
-        public ReadMessagesViewModel()
-        {
-
-        }
 
     }
 }

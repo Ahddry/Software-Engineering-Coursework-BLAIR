@@ -8,6 +8,9 @@ namespace Coursework1.UI.View_Models
 {
     public class HomeViewModel : BaseViewModel
     {
+        public HomeViewModel()
+        {
 
+        }
     }
 }

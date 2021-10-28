@@ -31,3 +31,7 @@ C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Course
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\ImportMessagesView.baml
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\NewMessageView.baml
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\ReadMessagesView.baml
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\NMAdvancedView.g.cs
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\NMSimpleView.g.cs
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\NMAdvancedView.baml
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\NMSimpleView.baml

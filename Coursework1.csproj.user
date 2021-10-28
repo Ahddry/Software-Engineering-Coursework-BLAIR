@@ -16,6 +16,12 @@
     <Compile Update="UI\View\NewMessageView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\View\NMAdvancedView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\View\NMSimpleView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UI\View\ReadMessagesView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -34,6 +40,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\View\NewMessageView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\View\NMAdvancedView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\View\NMSimpleView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\View\ReadMessagesView.xaml">

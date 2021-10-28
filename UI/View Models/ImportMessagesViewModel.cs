@@ -8,5 +8,9 @@ namespace Coursework1.UI.View_Models
 {
     class ImportMessagesViewModel
     {
+        public ImportMessagesViewModel()
+        {
+
+        }
     }
 }

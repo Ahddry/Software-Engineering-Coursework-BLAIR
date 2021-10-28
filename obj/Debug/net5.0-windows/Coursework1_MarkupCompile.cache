@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\App.xaml
-667937667
+8-1067200027
 
-14468890091
+18-1821733086
 193-1891726104
-MainWindow.xaml;UI\Theme\MenuButton.xaml;UI\View\HomeView.xaml;UI\View\ImportMessagesView.xaml;UI\View\NewMessageView.xaml;UI\View\ReadMessagesView.xaml;
+MainWindow.xaml;UI\Theme\MenuButton.xaml;UI\View\HomeView.xaml;UI\View\ImportMessagesView.xaml;UI\View\NewMessageView.xaml;UI\View\NMAdvancedView.xaml;UI\View\NMSimpleView.xaml;UI\View\ReadMessagesView.xaml;
 
 False
 

@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Other\" />
-    <Folder Include="UI\Model\" />
+    <Folder Include="UI\Models\" />
     <Folder Include="UI\Images\" />
   </ItemGroup>
 

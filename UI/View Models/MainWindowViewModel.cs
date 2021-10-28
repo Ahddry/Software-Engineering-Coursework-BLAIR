@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Coursework1.Core;
@@ -29,29 +30,37 @@ namespace Coursework1.UI.View_Models
             ContentControlBinding = new HomeView();
         }
 
+        public new void ChangeView(object parameter)
+        {
+            ContentControlBinding = (UserControl)parameter;
+            OnChanged(nameof(ContentControlBinding));
+        }
+
         private void HomeClick()
         {
-            ContentControlBinding = new HomeView();
-            OnChanged(nameof(ContentControlBinding));
+            ChangeView(new HomeView());
         }
 
         private void NewMessageClick()
         {
-            ContentControlBinding = new NewMessageView();
-            OnChanged(nameof(ContentControlBinding));
+            ChangeView(new NewMessageView());
         }
 
         private void ImportMessageClick()
         {
-            ContentControlBinding = new ImportMessagesView();
-            OnChanged(nameof(ContentControlBinding));
+            ChangeView(new ImportMessagesView());
         }
 
         private void ReadMessageClick()
         {
-            ContentControlBinding = new ReadMessagesView();
-            OnChanged(nameof(ContentControlBinding));
+            ChangeView(new ReadMessagesView());
         }
 
+        public void SimpleButtonTamere()
+        {
+            ContentControlBinding = new HomeView();
+            OnChanged(nameof(ContentControlBinding));
+            //SimpleButtonText = "TA MERE";
+        }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Coursework1.UI.View_Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,18 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Coursework1.UI.View_Models;
 
 namespace Coursework1.UI.View
 {
     /// <summary>
-    /// Logique d'interaction pour ImportMessagesView.xaml
+    /// Logique d'interaction pour NMAdvancedView.xaml
     /// </summary>
-    public partial class ImportMessagesView : UserControl
+    public partial class NMAdvancedView : UserControl
     {
-        public ImportMessagesView()
+        public NMAdvancedView()
         {
             InitializeComponent();
-            this.DataContext = new ImportMessagesViewModel();
+            this.DataContext = new NMAdvancedViewModel();
         }
     }
 }

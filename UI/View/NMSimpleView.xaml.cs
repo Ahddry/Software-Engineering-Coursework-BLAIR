@@ -17,14 +17,14 @@ using System.Windows.Shapes;
 namespace Coursework1.UI.View
 {
     /// <summary>
-    /// Logique d'interaction pour ImportMessagesView.xaml
+    /// Logique d'interaction pour NMSimpleView.xaml
     /// </summary>
-    public partial class ImportMessagesView : UserControl
+    public partial class NMSimpleView : UserControl
     {
-        public ImportMessagesView()
+        public NMSimpleView()
         {
             InitializeComponent();
-            this.DataContext = new ImportMessagesViewModel();
+            this.DataContext = new NMSimpleViewModel();
         }
     }
 }
