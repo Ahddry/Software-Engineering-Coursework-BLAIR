@@ -4,11 +4,14 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <Authors>Adrien Blair</Authors>
+    <ApplicationIcon />
+    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Saved Messages\" />
     <Folder Include="Other\" />
-    <Folder Include="UI\Models\" />
     <Folder Include="UI\Images\" />
   </ItemGroup>
 

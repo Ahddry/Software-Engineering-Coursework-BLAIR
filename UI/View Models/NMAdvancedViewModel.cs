@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
+using Coursework1.Core;
+using Coursework1.Models;
+using Microsoft.Win32;
 
 namespace Coursework1.UI.View_Models
 {
@@ -21,10 +25,8 @@ namespace Coursework1.UI.View_Models
 
         #region Button
         public string SaveButtonText { get; private set; }
-        public string BackButtonText { get; private set; }
 
         public ICommand SaveButtonCommand { get; private set; }
-        public ICommand BackButtonCommand { get; private set; }
         #endregion
 
         public NMAdvancedViewModel()
@@ -36,20 +38,45 @@ namespace Coursework1.UI.View_Models
             BodyTextBox = string.Empty;
 
             SaveButtonText = "Save Message";
-            BackButtonText = "Go back";
 
-            //SaveButtonCommand = new RelayCommand(SaveButtonClick);
-            //BackButtonCommand = new RelayCommand(BackButtonClick);
+            SaveButtonCommand = new RelayCommand(SaveButtonClick);
         }
 
         private void SaveButtonClick()
         {
-
-        }
-
-        private void BackButtonClick()
-        {
-
+            MessageBox.Show($"Header :\n{HeaderTextBox}\nBody : \n{BodyTextBox}");
+            if (string.IsNullOrWhiteSpace(HeaderTextBox) || string.IsNullOrWhiteSpace(BodyTextBox)) 
+                MessageBox.Show("Message Header and Body can't be empty");
+            else
+            {
+                switch (HeaderTextBox[0])
+                {
+                    case 'S':
+                        SMS sms = new(HeaderTextBox, BodyTextBox);
+                        sms.WriteToJSON();
+                        HeaderTextBox = string.Empty;
+                        BodyTextBox = string.Empty;
+                        MessageBox.Show("SMS saved !", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
+                        break;
+                    case 'E':
+                        Email email = new(HeaderTextBox, BodyTextBox);
+                        email.WriteToJSON();
+                        HeaderTextBox = string.Empty;
+                        BodyTextBox = string.Empty;
+                        MessageBox.Show("Email saved !", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
+                        break;
+                    case 'T':
+                        Tweet tweet = new(HeaderTextBox, BodyTextBox);
+                        tweet.WriteToJSON();
+                        HeaderTextBox = string.Empty;
+                        BodyTextBox = string.Empty;
+                        MessageBox.Show("Tweet saved !", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
+                        break;
+                    default:
+                        MessageBox.Show("ERROR:\nUnable to recognize that header as a valid message header.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        break;
+                }
+            }
         }
     }
 }
