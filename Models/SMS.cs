@@ -12,6 +12,7 @@ namespace Coursework1.Models
     [DataContract]
     public class SMS : MessageType
     {
+
         public SMS(string header, string body) : base(header, body)
         {
             Type = "SMS";

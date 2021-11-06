@@ -16,6 +16,7 @@ namespace Coursework1.Models
         public string SIR { get; private set; }
         [DataMember]
         public string[] QuarantinedLinks { get; private set; }
+
         public Email(string header, string body) : base(header, body)
         {
             Type = "Email";

@@ -16,6 +16,7 @@ namespace Coursework1.Models
         public string[] Hashtags { get; private set; }
         [DataMember]
         public string[] Mentions { get; private set; }
+
         public Tweet(string header, string body) : base(header, body)
         {
             Type = "Tweet";

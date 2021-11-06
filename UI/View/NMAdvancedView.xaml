@@ -18,7 +18,7 @@
             <!--Row 1-->
             <TextBlock Text="{Binding HeaderTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
             <TextBox Text="{Binding HeaderTextBox}" VerticalAlignment="Center" Background=" #2D2D30" Foreground="White" MinHeight="30" MaxHeight="200"
-                     TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+                     TextWrapping="Wrap" AcceptsReturn="False" VerticalScrollBarVisibility="Auto"/>
 
             <!--Row 2-->
             <TextBlock Text="{Binding BodyTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>

@@ -56,6 +56,8 @@ namespace Coursework1.UI.View_Models
                         sms.WriteToJSON();
                         HeaderTextBox = string.Empty;
                         BodyTextBox = string.Empty;
+                        OnChanged(nameof(HeaderTextBox));
+                        OnChanged(nameof(BodyTextBox));
                         MessageBox.Show("SMS saved !", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
                         break;
                     case 'E':
@@ -63,6 +65,8 @@ namespace Coursework1.UI.View_Models
                         email.WriteToJSON();
                         HeaderTextBox = string.Empty;
                         BodyTextBox = string.Empty;
+                        OnChanged(nameof(HeaderTextBox));
+                        OnChanged(nameof(BodyTextBox));
                         MessageBox.Show("Email saved !", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
                         break;
                     case 'T':
@@ -70,6 +74,8 @@ namespace Coursework1.UI.View_Models
                         tweet.WriteToJSON();
                         HeaderTextBox = string.Empty;
                         BodyTextBox = string.Empty;
+                        OnChanged(nameof(HeaderTextBox));
+                        OnChanged(nameof(BodyTextBox));
                         MessageBox.Show("Tweet saved !", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
                         break;
                     default:

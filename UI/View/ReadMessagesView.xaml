@@ -5,8 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Coursework1.UI.View"
              mc:Ignorable="d" 
+             Foreground="White"
+             Background="#2A2A2C"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <StackPanel>
+        <DataGrid ItemsSource="{Binding Messages}" IsReadOnly="True" AutoGenerateColumns="True">
+            <DataGrid.InputBindings>
+                <MouseBinding MouseAction="RightClick" Command=""/>
+            </DataGrid.InputBindings>
+        </DataGrid>
+        <TextBlock Text="{Binding testlol}"/>
+        <TextBox Text="{Binding leContenu}" />
+    </StackPanel>
 </UserControl>
