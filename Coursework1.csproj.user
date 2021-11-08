@@ -25,6 +25,9 @@
     <Compile Update="UI\View\ReadMessagesView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\View\SingleMessageView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -49,6 +52,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\View\ReadMessagesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\View\SingleMessageView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

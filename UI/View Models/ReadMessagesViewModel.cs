@@ -1,4 +1,6 @@
-﻿using Coursework1.Models;
+﻿using Coursework1.Core;
+using Coursework1.Models;
+using Coursework1.UI.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,21 +10,26 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Coursework1.UI.View_Models
 {
-    public class ReadMessagesViewModel
+    public class ReadMessagesViewModel : BaseViewModel
     {
         public List<MessageType> ReadMessages { get; set; } 
         public List<string> UnreadableMessages { get; set; }
         public ObservableCollection<MessageType> Messages { get; set; }
-        public string testlol { get; set; }
-        public string leContenu { get; set; }
+        public new UserControl ContentControlBinding { get; private set; }
+        public ICommand OpenItemCommand { get; private set; }
+        public MessageType SelectedMessage { get; set; }
+
         public ReadMessagesViewModel()
         {
             ReadMessages = new();
             string path = @$"{ System.IO.Directory.GetCurrentDirectory()}\..\..\..\Saved Messages\";
             #region ReadFiles
+            OpenItemCommand = new RelayCommand(OpenItem);
             foreach (string file in Directory.EnumerateFiles(path, "*.json"))
             {
                 string content = File.ReadAllText(file);
@@ -62,17 +69,18 @@ namespace Coursework1.UI.View_Models
                 }
             }
             #endregion
-
+            SelectedMessage = new MessageType("", "");
             if (ReadMessages != null)
                 Messages = new ObservableCollection<MessageType>(ReadMessages);
-            else
+        }
+
+        public void OpenItem()
+        {
+            if(SelectedMessage.Type != "Unknown")
             {
-                testlol = "C vide\n";
-                leContenu += $"voilà.\n{path}";
-                //foreach(var truc in ReadMessages)
-                //{
-                //    leContenu += $"{truc.Type}\n";
-                //}
+                MessageBox.Show(SelectedMessage.Body);
+                ContentControlBinding = new SingleMessageView(SelectedMessage, ReadMessages.IndexOf(SelectedMessage), ReadMessages);
+                OnChanged(nameof(ContentControlBinding));
             }
         }
 

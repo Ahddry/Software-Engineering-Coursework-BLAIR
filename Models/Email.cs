@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Coursework1.Models
@@ -21,6 +22,7 @@ namespace Coursework1.Models
         {
             Type = "Email";
             SIR = string.Empty;
+            
         }
 
         public override void WriteToJSON()
@@ -38,5 +40,7 @@ namespace Coursework1.Models
             string path = @$"{System.IO.Directory.GetCurrentDirectory()}\..\..\..\Saved Messages\{SaveTime.Year}.{SaveTime.Month}.{SaveTime.Day}-{SaveTime.Hour}.{SaveTime.Minute}.{SaveTime.Second}_{Header}.json";
             File.WriteAllBytes(path, json);
         }
+
+        
     }
 }

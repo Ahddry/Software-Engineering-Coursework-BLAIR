@@ -20,6 +20,10 @@ namespace Coursework1.Models
         public virtual string Type { get; protected set; }
         [DataMember]
         public virtual string Date { get; protected set; }
+        [DataMember]
+        public virtual string Sender { get; protected set; }
+        [DataMember]
+        public virtual string Text { get; protected set; }
 
         public MessageType(string header, string body)
         {
@@ -27,6 +31,8 @@ namespace Coursework1.Models
             Body = body;
             Type = "Unknown";
             Date = DateTime.Now.ToString();
+            Sender = "Unknown";
+            Text = string.Empty;
         }
 
         public virtual void WriteToJSON()
