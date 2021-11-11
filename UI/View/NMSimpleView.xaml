@@ -13,19 +13,44 @@
             <ColumnDefinition MinWidth="35" MaxWidth="400" Width="*"/>
             <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" HorizontalAlignment="Right" Orientation="Vertical" Margin="0 20 0 20">
-            <Button Padding="5" Width="35" Height="35" Foreground="White" Background="Transparent">
+        <StackPanel Grid.Column="0" HorizontalAlignment="Right" Orientation="Vertical" Margin="0 20 5 20">
+            <!--<RadioButton Content="S" Padding="5" MinWidth="35" Height="35" Foreground="White" Background="Transparent" 
+                         IsChecked="True" Command="{Binding SMSCommand}">
+                --><!--<StackPanel>
+                    --><!--<Image Source="/UI/Images/SMS.png"/>--><!--
+                    <TextBlock Text="S"/>
+                </StackPanel>--><!--
+            </RadioButton>
+            <Button Padding="5" Width="35" Height="35" Margin="0 10" Foreground="White" Background="DarkGray"
+                         Command="{Binding EmailCommand}">
                 <StackPanel>
-                    <Image Source="/UI/Images/SMS.png"/>
+                    <Image Source="/UI/Images/Email.png" />
+                    <TextBlock Text="E"/>
                 </StackPanel>
             </Button>
-            <Button Padding="5" Width="35" Height="35" Margin="0 10" Foreground="White" Background="Transparent">
-                <Image Source="/UI/Images/Email.png" />
+            <RadioButton Padding="5" Width="35" Height="35" Foreground="White" Background="DarkGray"
+                         Command="{Binding TweetCommand}">
+                <StackPanel>
+                    <Image Source="/UI/Images/Twitter.png" />
+                    <TextBlock Text="T"/>
+                </StackPanel>
+            </RadioButton>-->
+            <Button  Command="{Binding SMSCommand}" 
+                          Foreground="White">
+                <Image Source="/UI/Images/Twitter.png"/>
             </Button>
-            <Button Padding="5" Width="35" Height="35" Foreground="White" Background="Transparent">
-                <Image Source="/UI/Images/Twitter.png" />
-            </Button>
+            <RadioButton Content="E" Command="{Binding EmailCommand}"
+                         MinHeight="35" MinWidth="35" Margin="0 10 0 10" Foreground="White"/>
+            <RadioButton Content="T" Command="{Binding TweetCommand}"
+                         MinHeight="35" MinWidth="35" Foreground="White"/>
         </StackPanel>
-        
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <TextBlock Text="Sender"/>
+            <TextBox Text="{Binding rien}"/>
+            <TextBlock Text="Message"/>
+            <TextBox Text="{Binding rien}"/>
+            
+        </StackPanel>
+
     </Grid>
 </UserControl>

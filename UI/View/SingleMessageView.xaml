@@ -21,8 +21,8 @@
             <StackPanel Grid.Row="1">
                 <TextBlock Text="{Binding Type}"/>
                 <TextBlock Text="{Binding Header}" TextWrapping="Wrap"/>
-                <!--<TextBlock Grid.Row="1" Text="{Binding Sender}" TextWrapping="Wrap"/>-->
-                <TextBlock Text="{Binding Body}" TextWrapping="Wrap"/>
+                <TextBlock Grid.Row="1" Text="{Binding Text}" TextWrapping="Wrap"/>
+                <TextBlock Text="{Binding Sender}" TextWrapping="Wrap"/>
                 <TextBlock Text="{Binding OtherOption1}"/>
                 <TextBlock Text="{Binding OtherOption2}"/>
                 <TextBlock Text="{Binding OtherOption3}"/>

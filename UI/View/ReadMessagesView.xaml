@@ -10,7 +10,15 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel>
-            <DataGrid ItemsSource="{Binding Messages}" SelectedItem="{Binding SelectedMessage}" IsReadOnly="True" AutoGenerateColumns="True">
+            <DataGrid ItemsSource="{Binding Messages}" SelectedItem="{Binding SelectedMessage}" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Sender" Binding="{Binding Sender}"/>
+                    <DataGridTextColumn Header="Date" Binding="{Binding Date}"/>
+                    <DataGridTextColumn Header="Type" Binding="{Binding Type}"/>
+                    <DataGridTextColumn Header="Header" Binding="{Binding Header}"/>
+                    <DataGridTextColumn Header="Other" Binding="{Binding Other}"/>
+                    <DataGridTextColumn Header="Text" Binding="{Binding Text}"/>
+                </DataGrid.Columns>
                 <DataGrid.InputBindings>
                     <MouseBinding MouseAction="RightClick" Command="{Binding OpenItemCommand}"/>
                 </DataGrid.InputBindings>

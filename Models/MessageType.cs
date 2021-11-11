@@ -15,7 +15,7 @@ namespace Coursework1.Models
         [DataMember]
         public virtual string Header { get; private set; }
         [DataMember]
-        public virtual string Body { get; private set; }
+        public virtual string Body { get; protected set; }
         [DataMember]
         public virtual string Type { get; protected set; }
         [DataMember]
@@ -24,6 +24,8 @@ namespace Coursework1.Models
         public virtual string Sender { get; protected set; }
         [DataMember]
         public virtual string Text { get; protected set; }
+        [DataMember]
+        public virtual string Other { get; protected set; }
 
         public MessageType(string header, string body)
         {
@@ -33,6 +35,7 @@ namespace Coursework1.Models
             Date = DateTime.Now.ToString();
             Sender = "Unknown";
             Text = string.Empty;
+            Other = string.Empty;
         }
 
         public virtual void WriteToJSON()

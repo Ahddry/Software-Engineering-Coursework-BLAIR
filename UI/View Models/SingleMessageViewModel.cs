@@ -24,7 +24,8 @@ namespace Coursework1.UI.View_Models
         #region TextBlocks
         public string Type { get; set; }
         public string Header { get; set; }
-        public string Body { get; set; }
+        public string Sender { get; set; }
+        public string Text { get; set; }
         public string OtherOption1 { get; set; }
         public string OtherOption2 { get; set; }
         public string OtherOption3 { get; set; }
@@ -39,8 +40,10 @@ namespace Coursework1.UI.View_Models
             ReadMessages = messageList;
             Type = Message.Type;
             Header = Message.Header;
+            Sender = Message.Sender;
             string b = Message.Body;
-            Body = Regex.Replace(b, @"\t|\n|\r", " "); //https://stackoverflow.com/questions/4140723/how-to-remove-new-line-characters-from-a-string
+            //Text = Regex.Replace(b, @"\t|\n|\r", " "); //https://stackoverflow.com/questions/4140723/how-to-remove-new-line-characters-from-a-string
+            Text = Message.Text;
             switch(Type)
             {
                 case "Email":
