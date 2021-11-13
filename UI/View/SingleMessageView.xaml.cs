@@ -22,10 +22,10 @@ namespace Coursework1.UI.View
     /// </summary>
     public partial class SingleMessageView : UserControl
     {
-        public SingleMessageView(MessageType message, int index, List<MessageType> messageList)
+        public SingleMessageView(string path, int index, List<MessageType> messageList)
         {
             InitializeComponent();
-            this.DataContext = new SingleMessageViewModel(message, index, messageList);
+            this.DataContext = new SingleMessageViewModel(path, index, messageList);
         }
     }
 }

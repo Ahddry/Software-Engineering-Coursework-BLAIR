@@ -65,7 +65,7 @@ namespace Coursework1.UI.View_Models
                 }
                 else
                 {
-                    //UnreadableMessages.Add(new Tuple<string, string>(file, content));
+                    UnreadableMessages.Add(file);
                 }
             }
             #endregion
@@ -78,8 +78,7 @@ namespace Coursework1.UI.View_Models
         {
             if(SelectedMessage.Type != "Unknown")
             {
-                MessageBox.Show(SelectedMessage.Body);
-                ContentControlBinding = new SingleMessageView(SelectedMessage, ReadMessages.IndexOf(SelectedMessage), ReadMessages);
+                ContentControlBinding = new SingleMessageView(SelectedMessage.GetPath(), ReadMessages.IndexOf(SelectedMessage), ReadMessages);
                 OnChanged(nameof(ContentControlBinding));
             }
         }

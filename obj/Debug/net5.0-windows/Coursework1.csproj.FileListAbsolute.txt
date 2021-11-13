@@ -37,3 +37,4 @@ C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Course
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\NMSimpleView.baml
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\SingleMessageView.g.cs
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\SingleMessageView.baml
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\Theme\DataGrid.baml

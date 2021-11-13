@@ -53,5 +53,12 @@ namespace Coursework1.Models
             string path = @$"\..\..\..\Saved Messages\{SaveTime.Year}.{SaveTime.Month}.{SaveTime.Day}-{SaveTime.Hour}.{SaveTime.Minute}.{SaveTime.Second}_{Header}.json";
             File.WriteAllBytes(path, json);
         }
+
+        public virtual string GetPath()
+        {
+            DateTime dateTime = Convert.ToDateTime(Date);
+            string path = @$"{System.IO.Directory.GetCurrentDirectory()}\..\..\..\Saved Messages\{dateTime.Year}.{dateTime.Month}.{dateTime.Day}-{dateTime.Hour}.{dateTime.Minute}.{dateTime.Second}_{Header}.json";
+            return path;
+        }
     }
 }

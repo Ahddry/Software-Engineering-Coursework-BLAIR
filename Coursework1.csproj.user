@@ -33,6 +33,9 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="UI\Theme\DataGrid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UI\Theme\MenuButton.xaml">
       <SubType>Designer</SubType>
     </Page>

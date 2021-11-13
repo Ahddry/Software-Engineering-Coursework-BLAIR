@@ -27,6 +27,8 @@ namespace Coursework1.Models
             FindHashtags();
             Abbreviations = new();
             LoadAbbreviations();
+            while (body.Contains('\r'))
+                Body = Body.Replace("\r", string.Empty);
             foreach (Tuple<string, string> expression in Abbreviations)
             {
                 while (Body.Contains($"{expression.Item1} ") || Body.Contains($"{expression.Item1}\n"))

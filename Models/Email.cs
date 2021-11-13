@@ -21,10 +21,14 @@ namespace Coursework1.Models
         public string SIRSortCode { get; private set; }
         [DataMember]
         public string NatureOfIncident { get; private set; }
+        [DataMember]
+        public string Object { get; private set; }
 
         public Email(string header, string body) : base(header, body)
         {
             Type = "Email";
+            if (body.Contains('\r'))
+                Body = Body.Replace("\r", string.Empty);
             string[] emails = ExtractEmails(body);
             if (emails != null)
                 Sender = emails[0];
@@ -51,15 +55,42 @@ namespace Coursework1.Models
                 }
                 Text = Body[(Body.IndexOf(NatureOfIncident) + NatureOfIncident.Length + 1)..];
                 Other += $"SIGNIFICANT INCIDENT REPORT\nSort Code: {SIRSortCode}\nNature of Incident: {NatureOfIncident}\n";
+                Object = $"SIR: {SIRSortCode} - {NatureOfIncident}";
             }
             else
             {
                 NatureOfIncident = string.Empty;
                 if (Sender != "Unknown")
-                    Text = Body[(Sender.Length + 1)..];
+                {
+                    string[] lines = Body.Split("\n");
+                    int lineNb = 0;
+                    foreach (string line in lines)
+                    {
+                        if (line.Contains(Sender))
+                        {
+                            Object = lines[lineNb + 1];
+                            break;
+                        }
+                        lineNb++;
+                    }
+                    if (Body.Length > (Sender.Length + Object.Length + 3))
+                        Text = Body[(Sender.Length + Object.Length + 2)..];
+                    else
+                        Text = Body;
+                }
                 else
-                    Text = Body;
+                {
+                    if(Body.Contains("\n"))
+                    {
+                        string[] lines = Body.Split("\n");
+                        Object = lines[0];
+                        Text = Body[(Object.Length + 1)..];
+                    }
+                    else
+                        Text = Body;
+                }
             }
+            Other = $"Object: {Object}\n";
             if (emails != null)
             {
                 if (emails.Length > 1)

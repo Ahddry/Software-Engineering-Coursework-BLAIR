@@ -14,18 +14,40 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" HorizontalAlignment="Right" Orientation="Horizontal">
-                <Button Content=" Previous " Margin="0 0 10 0" Command="{Binding PreviousButtonCommand}"/>
-                <Button Content=" Next " Margin="0 0 10 0" Command="{Binding NextButtonCommand}"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" MinWidth="50" MaxWidth="150"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0">
+                <Button Content=" Go Back " Margin="10 0 10 0" 
+                    Command="{Binding BackButtonCommand}" Background="#CC0000" Foreground="White" Height="30"/>
             </StackPanel>
-            <StackPanel Grid.Row="1">
-                <TextBlock Text="{Binding Type}"/>
-                <TextBlock Text="{Binding Header}" TextWrapping="Wrap"/>
-                <TextBlock Grid.Row="1" Text="{Binding Text}" TextWrapping="Wrap"/>
-                <TextBlock Text="{Binding Sender}" TextWrapping="Wrap"/>
-                <TextBlock Text="{Binding OtherOption1}"/>
-                <TextBlock Text="{Binding OtherOption2}"/>
-                <TextBlock Text="{Binding OtherOption3}"/>
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" >
+                <Button Content=" Previous " Margin="0 0 10 0" Command="{Binding PreviousButtonCommand}" Background="Orange"/>
+                <Button Content=" Next " Margin="0 0 10 0" Command="{Binding NextButtonCommand}" Background="#1D9BF0"/>
+            </StackPanel>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Type}" HorizontalAlignment="Right" FontSize="20" Margin="0 15 0 0"/>
+            
+            <StackPanel Grid.Row="1" Grid.Column="1" Margin="10 15 10 15">
+                <TextBlock Text="{Binding Header}" TextWrapping="Wrap" Margin="0 0 0 25" FontWeight="Light" FontSize="13"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="{Binding Sender}" TextWrapping="Wrap" FontSize="15" FontWeight="Bold"/>
+                    <TextBlock Grid.Column="1" Text="{Binding Date}" TextWrapping="Wrap" FontSize="12" 
+                               HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 18 0"/>
+                </Grid>
+                <Border Background="#262626" CornerRadius="10" BorderThickness="1" BorderBrush="#1E1E1E" Margin="0 5 15 5">
+                    <TextBlock Grid.Row="1" Text="{Binding Text}" TextWrapping="Wrap" Margin="10 10 5 10" FontSize="14"/>
+                </Border>
+                <TextBlock Text="{Binding OtherOption1}" Margin="5 10 0 0" FontSize="14"/>
+                <TextBlock Text="{Binding OtherOption2}" Foreground="DarkOrange" Margin="8 2 0 10" FontWeight="SemiBold"/>
+                <TextBlock Text="{Binding OtherOption3}" Margin="5 0 0 0" FontSize="14"/>
+                <TextBlock Text="{Binding OtherOption4}" Foreground="#1D9BF0" Margin="8 2 0 0" FontWeight="SemiBold"/>
+                <Button Content="{Binding ButtonName}" Command="{Binding ShowQuarantinedURLsCommand}" 
+                        HorizontalAlignment="Right" Margin="0 0 30 0" Background="#2D2D30" Foreground="White" BorderBrush="Transparent" />
             </StackPanel>
         </Grid>
         <ContentControl Content="{Binding ContentControlBinding}"/>
