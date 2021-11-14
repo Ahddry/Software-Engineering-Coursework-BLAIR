@@ -37,6 +37,8 @@ namespace Coursework1.Models
 
         public override void WriteToJSON()
         {
+            DateTime SaveTime = DateTime.Now;
+            Date = SaveTime.ToString();
             //https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-how-to?pivots=dotnet-5-0
             // Create a stream to serialize the object to.
             var ms = new MemoryStream();
@@ -46,14 +48,13 @@ namespace Coursework1.Models
             ser.WriteObject(ms, this);
             byte[] json = ms.ToArray();
             ms.Close();
-            DateTime SaveTime = DateTime.Now;
             string path = @$"{System.IO.Directory.GetCurrentDirectory()}\..\..\..\Saved Messages\{SaveTime.Year}.{SaveTime.Month}.{SaveTime.Day}-{SaveTime.Hour}.{SaveTime.Minute}.{SaveTime.Second}_{Header}.json";
             File.WriteAllBytes(path, json);
         }
 
         private void ExtractPhoneNumbers()
         {
-            //Regex fuction found on
+            //Regex pattern found on
             //https://stackoverflow.com/a/19133469
             MatchCollection matches = Regex.Matches(Body, @"^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}\b");
             string[] phoneNumbers = new string[matches.Count];

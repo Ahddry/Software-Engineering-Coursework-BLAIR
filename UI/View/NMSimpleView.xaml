@@ -8,49 +8,30 @@
              Background="#2A2A2C"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="35" MaxWidth="400" Width="*"/>
-            <ColumnDefinition Width="7*"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" HorizontalAlignment="Right" Orientation="Vertical" Margin="0 20 5 20">
-            <!--<RadioButton Content="S" Padding="5" MinWidth="35" Height="35" Foreground="White" Background="Transparent" 
-                         IsChecked="True" Command="{Binding SMSCommand}">
-                --><!--<StackPanel>
-                    --><!--<Image Source="/UI/Images/SMS.png"/>--><!--
-                    <TextBlock Text="S"/>
-                </StackPanel>--><!--
-            </RadioButton>
-            <Button Padding="5" Width="35" Height="35" Margin="0 10" Foreground="White" Background="DarkGray"
-                         Command="{Binding EmailCommand}">
-                <StackPanel>
-                    <Image Source="/UI/Images/Email.png" />
-                    <TextBlock Text="E"/>
-                </StackPanel>
-            </Button>
-            <RadioButton Padding="5" Width="35" Height="35" Foreground="White" Background="DarkGray"
-                         Command="{Binding TweetCommand}">
-                <StackPanel>
-                    <Image Source="/UI/Images/Twitter.png" />
-                    <TextBlock Text="T"/>
-                </StackPanel>
-            </RadioButton>-->
-            <Button  Command="{Binding SMSCommand}" 
+    <StackPanel Orientation="Vertical">
+        <TextBlock Text="Choose from the message types and write your message" FontSize="17" FontWeight="DemiBold"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="35" MaxWidth="400" Width="*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" HorizontalAlignment="Right" Orientation="Vertical" Margin="0 20 5 20">
+                <Button  Command="{Binding SMSCommand}" Width="50" Height="50" Background="Transparent" BorderBrush="Transparent"
                           Foreground="White">
-                <Image Source="/UI/Images/Twitter.png"/>
-            </Button>
-            <RadioButton Content="E" Command="{Binding EmailCommand}"
-                         MinHeight="35" MinWidth="35" Margin="0 10 0 10" Foreground="White"/>
-            <RadioButton Content="T" Command="{Binding TweetCommand}"
-                         MinHeight="35" MinWidth="35" Foreground="White"/>
-        </StackPanel>
-        <StackPanel Grid.Column="1" Orientation="Vertical">
-            <TextBlock Text="Sender"/>
-            <TextBox Text="{Binding rien}"/>
-            <TextBlock Text="Message"/>
-            <TextBox Text="{Binding rien}"/>
-            
-        </StackPanel>
+                    <Image Source="/UI/Images/SMS.png"/>
+                </Button>
+                <Button Command="{Binding EmailCommand}"
+                         Height="50" Width="50" Margin="0 10 0 10" Foreground="White" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="/UI/Images/Email.png" />
+                </Button>
+                <Button Command="{Binding TweetCommand}"
+                         Height="50" Width="50" Foreground="White" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="/UI/Images/Twitter.png" />
+                </Button>
+            </StackPanel>
+            <ContentControl Content="{Binding ContentControlBinding}" Grid.Column="1" Grid.Row="1" Margin="5 5"/>
 
-    </Grid>
+        </Grid>
+    </StackPanel>
+    
 </UserControl>

@@ -27,7 +27,7 @@ namespace Coursework1.Models
             FindHashtags();
             Abbreviations = new();
             LoadAbbreviations();
-            while (body.Contains('\r'))
+            if (body.Contains('\r'))
                 Body = Body.Replace("\r", string.Empty);
             foreach (Tuple<string, string> expression in Abbreviations)
             {
@@ -36,8 +36,22 @@ namespace Coursework1.Models
                     Body = Body.Replace($"{expression.Item1}", $"{expression.Item1}:<{expression.Item2}>");
                 }
             }
+
+            string[] lines = Body.Split("\n");
+            if (lines.Length > 1)
+            {
+                lines[0] = lines[0].Replace(" ", string.Empty);
+                if (lines[0] != Sender)
+                    Sender = "Unknown";
+            }
+            else Sender = "Unknown";
+
             if (Sender != "Unknown")
-                Text = Body[(Sender.Length + 1)..];
+            {
+                if (Body.Length > Sender.Length + 2)
+                    Text = Body[(Sender.Length + 1)..];
+                else Text = string.Empty;
+            }
             else
                 Text = Body;
             if (Mentions != null)
@@ -58,6 +72,8 @@ namespace Coursework1.Models
 
         public override void WriteToJSON()
         {
+            DateTime SaveTime = DateTime.Now;
+            Date = SaveTime.ToString();
             //https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-how-to?pivots=dotnet-5-0
             // Create a stream to serialize the object to.
             var ms = new MemoryStream();
@@ -67,7 +83,6 @@ namespace Coursework1.Models
             ser.WriteObject(ms, this);
             byte[] json = ms.ToArray();
             ms.Close();
-            DateTime SaveTime = DateTime.Now;
             string path = @$"{System.IO.Directory.GetCurrentDirectory()}\..\..\..\Saved Messages\{SaveTime.Year}.{SaveTime.Month}.{SaveTime.Day}-{SaveTime.Hour}.{SaveTime.Minute}.{SaveTime.Second}_{Header}.json";
             File.WriteAllBytes(path, json);
         }

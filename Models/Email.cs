@@ -53,7 +53,12 @@ namespace Coursework1.Models
                     if (line.Contains("Nature of Incident:"))
                         NatureOfIncident = line[20..];
                 }
-                Text = Body[(Body.IndexOf(NatureOfIncident) + NatureOfIncident.Length + 1)..];
+                if (NatureOfIncident == null)
+                    Text = string.Empty;
+                else if (Body.Length > (Body.IndexOf(NatureOfIncident) + NatureOfIncident.Length + 1))
+                    Text = Body[(Body.IndexOf(NatureOfIncident) + NatureOfIncident.Length + 1)..];
+                else
+                    Text = string.Empty;
                 Other += $"SIGNIFICANT INCIDENT REPORT\nSort Code: {SIRSortCode}\nNature of Incident: {NatureOfIncident}\n";
                 Object = $"SIR: {SIRSortCode} - {NatureOfIncident}";
             }
@@ -64,19 +69,24 @@ namespace Coursework1.Models
                 {
                     string[] lines = Body.Split("\n");
                     int lineNb = 0;
-                    foreach (string line in lines)
+                    if (lines.Length > 1)
                     {
-                        if (line.Contains(Sender))
+                        foreach (string line in lines)
                         {
-                            Object = lines[lineNb + 1];
-                            break;
+                            if (line.Contains(Sender))
+                            {
+                                Object = lines[lineNb + 1];
+                                break;
+                            }
+                            lineNb++;
                         }
-                        lineNb++;
                     }
+                    else Object = string.Empty;
+
                     if (Body.Length > (Sender.Length + Object.Length + 3))
                         Text = Body[(Sender.Length + Object.Length + 2)..];
                     else
-                        Text = Body;
+                        Text = string.Empty;
                 }
                 else
                 {
@@ -106,6 +116,8 @@ namespace Coursework1.Models
 
         public override void WriteToJSON()
         {
+            DateTime SaveTime = DateTime.Now;
+            Date = SaveTime.ToString();
             //https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-how-to?pivots=dotnet-5-0
             // Create a stream to serialize the object to.
             var ms = new MemoryStream();
@@ -115,7 +127,6 @@ namespace Coursework1.Models
             ser.WriteObject(ms, this);
             byte[] json = ms.ToArray();
             ms.Close();
-            DateTime SaveTime = DateTime.Now;
             string path = @$"{System.IO.Directory.GetCurrentDirectory()}\..\..\..\Saved Messages\{SaveTime.Year}.{SaveTime.Month}.{SaveTime.Day}-{SaveTime.Hour}.{SaveTime.Minute}.{SaveTime.Second}_{Header}.json";
             File.WriteAllBytes(path, json);
         }

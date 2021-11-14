@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\App.xaml
-10590422709
+13-1551247793
 
-241785414693
+30-1215989927
 193-1891726104
-MainWindow.xaml;UI\Theme\DataGrid.xaml;UI\Theme\MenuButton.xaml;UI\View\HomeView.xaml;UI\View\ImportMessagesView.xaml;UI\View\NewMessageView.xaml;UI\View\NMAdvancedView.xaml;UI\View\NMSimpleView.xaml;UI\View\ReadMessagesView.xaml;UI\View\SingleMessageView.xaml;
+MainWindow.xaml;UI\Theme\DataGrid.xaml;UI\Theme\MenuButton.xaml;UI\View\EmailCreationView.xaml;UI\View\HomeView.xaml;UI\View\ImportMessagesView.xaml;UI\View\NewMessageView.xaml;UI\View\NMAdvancedView.xaml;UI\View\NMSimpleView.xaml;UI\View\ReadMessagesView.xaml;UI\View\SingleMessageView.xaml;UI\View\SMSCreationView.xaml;UI\View\TweetCreationView.xaml;
 
 False
 

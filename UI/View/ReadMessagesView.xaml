@@ -13,8 +13,9 @@
             <DataGrid ItemsSource="{Binding Messages}" SelectedItem="{Binding SelectedMessage}" IsReadOnly="True" 
                       AutoGenerateColumns="False" ColumnHeaderStyle="{StaticResource HeaderStyle}" 
                       Background="#2D2D30" Foreground="White"
-                      HorizontalGridLinesBrush="White" VerticalGridLinesBrush="White" VerticalScrollBarVisibility="Visible" 
-                      HorizontalScrollBarVisibility="Auto" RowBackground="#262626">
+                      HorizontalGridLinesBrush="#696969" VerticalGridLinesBrush="#434343" VerticalScrollBarVisibility="Visible" 
+                      HorizontalScrollBarVisibility="Auto" RowBackground="#262626" Margin="0 5 0 10"
+                      MaxHeight="420">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Sender" Binding="{Binding Sender}"/>
                     <DataGridTextColumn Header="Date" Binding="{Binding Date}"/>

@@ -165,10 +165,13 @@ namespace Coursework1.UI.View_Models
         {
             if (QuarantinedLinks != null)
             {
-                string links = "Only open these links if the sender of the message is trustworthy!\n";
-                foreach (string link in QuarantinedLinks)
-                    links += $"{link}\n";
-                MessageBox.Show(links, "Quarantined links", MessageBoxButton.OK, MessageBoxImage.Information);
+                if (QuarantinedLinks.Length != 0)
+                {
+                    string links = "Only open these links if the sender of the message is trustworthy!\n";
+                    foreach (string link in QuarantinedLinks)
+                        links += $"{link}\n";
+                    MessageBox.Show(links, "Quarantined links", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
         }
     }

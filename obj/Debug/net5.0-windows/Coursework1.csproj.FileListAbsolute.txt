@@ -38,3 +38,9 @@ C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Course
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\SingleMessageView.g.cs
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\SingleMessageView.baml
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\Theme\DataGrid.baml
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\EmailCreationView.g.cs
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\SMSCreationView.g.cs
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\TweetCreationView.g.cs
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\EmailCreationView.baml
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\SMSCreationView.baml
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\TweetCreationView.baml

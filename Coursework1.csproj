@@ -10,9 +10,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="UI\Images\Email.png" />
+    <None Remove="UI\Images\SMS.png" />
+    <None Remove="UI\Images\Twitter.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Import Messages\" />
     <Folder Include="Saved Messages\" />
     <Folder Include="Other\" />
-    <Folder Include="UI\Images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="UI\Images\Email.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UI\Images\SMS.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UI\Images\Twitter.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

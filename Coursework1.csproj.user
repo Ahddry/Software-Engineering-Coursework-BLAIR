@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="UI\View\EmailCreationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UI\View\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,12 @@
     <Compile Update="UI\View\SingleMessageView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\View\SMSCreationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\View\TweetCreationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -37,6 +46,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Theme\MenuButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\View\EmailCreationView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\View\HomeView.xaml">
@@ -58,6 +70,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\View\SingleMessageView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\View\SMSCreationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\View\TweetCreationView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
