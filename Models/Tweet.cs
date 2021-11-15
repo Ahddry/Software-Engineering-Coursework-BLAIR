@@ -11,25 +11,34 @@ using System.Windows;
 
 namespace Coursework1.Models
 {
+    /// <summary>
+    /// Represents Type of Message, with a sending username following the Twitter username format,
+    /// and an up to 140 characters long text
+    /// </summary>
     [DataContract]
     public class Tweet : MessageType
     {
-        public List<Tuple<string, string>> Abbreviations { get; private set; }
+        public List<Tuple<string, string>> Abbreviations { get; private set; }//List of all the textspeak abbreviations and their detailed version.
         [DataMember]
-        public string[] Hashtags { get; private set; }
+        public string[] Hashtags { get; private set; } //List of all the Hashtags found in the Tweet
         [DataMember]
-        public string[] Mentions { get; private set; }
-
+        public string[] Mentions { get; private set; }//List of all the Mentioned users found in the Tweet
+        /// <summary>
+        /// Represents Type of Message, with a sending username following the Twitter username format,
+        /// and an up to 140 characters long text
+        /// </summary>
+        /// <param name="header">Header of the Tweet. Needs to start with an 'T' and be followed by 9 digits</param>
+        /// <param name="body">Body of the Tweet, to be parsed</param>
         public Tweet(string header, string body) : base(header, body)
         {
-            Type = "Tweet";
-            FindMentions();
-            FindHashtags();
+            Type = "Tweet";//Set the type of the message
+            FindMentions();//Find all the mentioned users in the message
+            FindHashtags();//Find all the Hashtages in the message
             Abbreviations = new();
-            LoadAbbreviations();
-            if (body.Contains('\r'))
+            LoadAbbreviations();//Load all the textspeak abbreviations and their detailed version from the CSV file.
+            if (body.Contains('\r'))//Remove all the superfluous '\r' characters
                 Body = Body.Replace("\r", string.Empty);
-            foreach (Tuple<string, string> expression in Abbreviations)
+            foreach (Tuple<string, string> expression in Abbreviations)//replace all the textspeaks abbreviations by their detailed versions
             {
                 while (Body.Contains($"{expression.Item1} ") || Body.Contains($"{expression.Item1}\n"))
                 {
@@ -38,7 +47,7 @@ namespace Coursework1.Models
             }
 
             string[] lines = Body.Split("\n");
-            if (lines.Length > 1)
+            if (lines.Length > 1) //Find the Username of the Sender
             {
                 lines[0] = lines[0].Replace(" ", string.Empty);
                 if (lines[0] != Sender)
@@ -48,20 +57,20 @@ namespace Coursework1.Models
 
             if (Sender != "Unknown")
             {
-                if (Body.Length > Sender.Length + 2)
+                if (Body.Length > Sender.Length + 2)//Extract the text from the body
                     Text = Body[(Sender.Length + 1)..];
                 else Text = string.Empty;
             }
             else
                 Text = Body;
-            if (Mentions != null)
+            if (Mentions != null)//Add all the mentions to the Other category, so they can be seen from the Datagrid
             {
                 Other += "Mentions: ";
                 foreach (string elem in Mentions)
                     Other += $"{elem} ";
                 Other += "\n";
             }
-            if (Hashtags != null)
+            if (Hashtags != null)//Add all the hashtags to the Other category, so they can be seen from the Datagrid
             {
                 Other += "Hashtags: ";
                 foreach (string elem in Hashtags)
@@ -69,7 +78,9 @@ namespace Coursework1.Models
                 Other += "\n";
             }
         }
-
+        /// <summary>
+        /// Converts the Tweet and serialize it to a JSON stream.
+        /// </summary>
         public override void WriteToJSON()
         {
             DateTime SaveTime = DateTime.Now;
@@ -78,7 +89,7 @@ namespace Coursework1.Models
             // Create a stream to serialize the object to.
             var ms = new MemoryStream();
 
-            // Serializer the User object to the stream.
+            // Serialize the Tweet object to the stream.
             var ser = new DataContractJsonSerializer(typeof(Tweet));
             ser.WriteObject(ms, this);
             byte[] json = ms.ToArray();
@@ -86,7 +97,9 @@ namespace Coursework1.Models
             string path = @$"{System.IO.Directory.GetCurrentDirectory()}\..\..\..\Saved Messages\{SaveTime.Year}.{SaveTime.Month}.{SaveTime.Day}-{SaveTime.Hour}.{SaveTime.Minute}.{SaveTime.Second}_{Header}.json";
             File.WriteAllBytes(path, json);
         }
-
+        /// <summary>
+        /// Extract all the Hashtags from the body of the message
+        /// </summary>
         private void FindHashtags()
         {
             //Simple Regex I made Myself
@@ -99,10 +112,13 @@ namespace Coursework1.Models
                 c++;
             }
         }
+        /// <summary>
+        /// Extract all the mentioned usernames from the body of the message
+        /// </summary>
         private void FindMentions()
         {
             //Simple Regex I made Myself
-            MatchCollection matches = Regex.Matches(Body, @"\B(\@[a-zA-Z0-9]+\b)");
+            MatchCollection matches = Regex.Matches(Body, @"\B(\@[a-zA-Z0-9]{1,20}\b)");
             if (matches.Count > 0)
             {
                 Mentions = new string[matches.Count - 1];
@@ -116,7 +132,9 @@ namespace Coursework1.Models
                 }
             }
         }
-
+        /// <summary>
+        /// Load all the textspeak abbreviations and their detailed version from the CSV file.
+        /// </summary>
         private void LoadAbbreviations()
         {
             //string path = @$"{ System.IO.Directory.GetCurrentDirectory()}\..\..\..\Other\textwords.csv";

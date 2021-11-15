@@ -10,19 +10,27 @@ using System.Windows.Input;
 
 namespace Coursework1.UI.View_Models
 {
+    /// <summary>
+    /// View to easily create a Tweet.
+    /// </summary>
     public class TweetCreationViewModel : BaseViewModel
     {
         public string Username { get; set; } //Username text box text
         public string Text { get; set; } //Text text box text
         public ICommand SaveButtonCommand { get; private set; } //Save button control
 
+        /// <summary>
+        /// View to easily create a Tweet.
+        /// </summary>
         public TweetCreationViewModel()
         {
             Username = string.Empty; //Initialization of the content of the text boxes
             Text = string.Empty;
             SaveButtonCommand = new RelayCommand(SaveButtonClick); //Binding the Save button control to its function
         }
-
+        /// <summary>
+        /// Save the created Tweet
+        /// </summary>
         public void SaveButtonClick()
         {
             if (string.IsNullOrWhiteSpace(Username)) //Testing if the username is filled in

@@ -12,13 +12,16 @@ using System.Windows.Input;
 
 namespace Coursework1.UI.View_Models
 {
+    /// <summary>
+    /// View to easily create an email
+    /// </summary>
     public class EmailCreationViewModel : BaseViewModel
     {
         public string EmailAddress { get; set; } //Email Address text box text
         public string NatureOfIncident { get; set; } //Email Address text box text
-        public List<string> ListOfIncidents { get; set; }
-        public CollectionView NaturesOfIncident { get; set; }
-        public string SelectedItem
+        public List<string> ListOfIncidents { get; set; }//List of all the possible Natures of Incidents
+        public CollectionView NaturesOfIncident { get; set; } //List of all the possible Natures of Incidents, to be displayed
+        public string SelectedItem //Selected Item of the screen
         {
             get => NatureOfIncident;
             set
@@ -34,12 +37,14 @@ namespace Coursework1.UI.View_Models
         public ICommand SIROnCommand { get; private set; }//Save button control
         public ICommand SIROffCommand { get; private set; }//Save button control
         public ICommand SaveButtonCommand { get; private set; }//Save button control
-
+        /// <summary>
+        /// View to easily create an email
+        /// </summary>
         public EmailCreationViewModel()
         {
             EmailAddress = string.Empty;//Initialization of the content of the text boxes
             NatureOfIncident = string.Empty;
-            ListOfIncidents = new();
+            ListOfIncidents = new(); //Add all the possible Natures of incident
             ListOfIncidents.Add("Theft");
             ListOfIncidents.Add("Staff Attack");
             ListOfIncidents.Add("ATM Theft");
@@ -59,17 +64,23 @@ namespace Coursework1.UI.View_Models
             SIROffCommand = new RelayCommand(SIROffButtonClick);//Binding the SIROff button control to its function
             SaveButtonCommand = new RelayCommand(SaveButtonClick);//Binding the Save button control to its function
         }
-
+        /// <summary>
+        /// Switch to a SIR mail
+        /// </summary>
         public void SIROnButtonClick()
         {
             SIR = true;
         }
-
+        /// <summary>
+        /// Switch to a standard email
+        /// </summary>
         public void SIROffButtonClick()
         {
             SIR = false;
         }
-
+        /// <summary>
+        /// Save the created email
+        /// </summary>
         public void SaveButtonClick()
         {
             //Regex pattern found on //https://regex101.com/r/SOgUIV/1
@@ -92,7 +103,7 @@ namespace Coursework1.UI.View_Models
             }
             else
             {
-                if (SIR)
+                if (SIR) //If the mail is a Significant Incident Report
                 {
                     if (string.IsNullOrWhiteSpace(NatureOfIncident))
                     {
@@ -132,7 +143,7 @@ namespace Coursework1.UI.View_Models
                         MessageBox.Show("Email saved !", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 }
-                else
+                else //If the email is a standard email
                 {
                     if (string.IsNullOrWhiteSpace(Object))
                     {

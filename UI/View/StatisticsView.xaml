@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="Coursework1.UI.View.StatisticsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Coursework1.UI.View"
+             mc:Ignorable="d"  
+             Foreground="White"
+             Background="#2A2A2C"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Margin="2 5 2 5" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">
+            <TextBlock Text="Significant Incident Reports statistics:" FontSize="20" FontWeight="DemiBold" Margin="0 0 0 5"/>
+            <ListBox Name="SIRList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" 
+                     ItemsSource="{Binding SIRStats}" Background="#2D2D30" Foreground="White">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Text}" />
+                            <TextBlock Grid.Column="1" Text="{Binding Count}" Margin="5 0 5 0"/>
+                            <TextBlock Grid.Column="2" Text="{Binding Percentage}" Margin="5 0 5 0"/>
+                            <ProgressBar Grid.Column="3" Minimum="0" Maximum="100" Value="{Binding Ratio}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Number of SMS: " FontSize="20" FontWeight="DemiBold" Grid.Column="0" Grid.Row="0" Margin="0 0 5 0"/>
+                <TextBlock Text="{Binding SMSNumber}" Foreground="LawnGreen" FontSize="20" FontWeight="SemiBold" Grid.Column="1" Grid.Row="0"/>
+                <TextBlock Text="Number of Emails: " FontSize="20" FontWeight="DemiBold" Grid.Column="0" Grid.Row="1" Margin="0 0 5 0"/>
+                <TextBlock Text="{Binding EmailNumber}" Foreground="OrangeRed" FontSize="20" FontWeight="SemiBold" Grid.Column="1" Grid.Row="1"/>
+                <TextBlock Text="Number of Tweets: " FontSize="20" FontWeight="DemiBold" Grid.Column="0" Grid.Row="2" Margin="0 0 5 0"/>
+                <TextBlock Text="{Binding TweetNumber}" Foreground="#1D9BF0" FontSize="20" FontWeight="SemiBold" Grid.Column="1" Grid.Row="2"/>
+            </Grid>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="2 5 2 5" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">
+            <TextBlock Text="Social Medias Mentions statistics:" FontSize="20" FontWeight="DemiBold" Margin="0 0 0 5"/>
+            <ListBox Name="MentionsList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" 
+                     ItemsSource="{Binding SocialMediasMentionsStats}" Background="#2D2D30" Foreground="White">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Text}" />
+                            <TextBlock Grid.Column="1" Text="{Binding Count}" Margin="5 0 5 0"/>
+                            <TextBlock Grid.Column="2" Text="{Binding Percentage}" Margin="5 0 5 0"/>
+                            <ProgressBar Grid.Column="3" Minimum="0" Maximum="100" Value="{Binding Ratio}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="2 5 2 5" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Social Medias Hashtags statistics:" FontSize="20" FontWeight="DemiBold" Margin="0 0 0 5"/>
+            <ListBox Name="HashtagsList" HorizontalContentAlignment="Stretch" Background="#2D2D30" Foreground="White"
+                     SelectionMode="Extended" ItemsSource="{Binding SocialMediasHashtagsStats}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Text}" />
+                            <TextBlock Grid.Column="1" Text="{Binding Count}" Margin="5 0 5 0"/>
+                            <TextBlock Grid.Column="2" Text="{Binding Percentage}" Margin="5 0 5 0"/>
+                            <ProgressBar Grid.Column="3" Minimum="0" Maximum="100" Value="{Binding Ratio}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

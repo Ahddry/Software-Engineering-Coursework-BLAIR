@@ -34,6 +34,9 @@
     <Compile Update="UI\View\SMSCreationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\View\StatisticsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UI\View\TweetCreationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -73,6 +76,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\View\SMSCreationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\View\StatisticsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\View\TweetCreationView.xaml">

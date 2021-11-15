@@ -11,19 +11,27 @@ using System.Windows.Input;
 
 namespace Coursework1.UI.View_Models
 {
+    /// <summary>
+    /// View to easily create a SMS.
+    /// </summary>
     public class SMSCreationViewModel : BaseViewModel
     {
         public string PhoneNumber { get; set; } //Phone Number text box text
         public string Text { get; set; }//Text text box text
         public ICommand SaveButtonCommand { get; private set; }//Save button control
 
+        /// <summary>
+        /// View to easily create a SMS.
+        /// </summary>
         public SMSCreationViewModel()
         {
             PhoneNumber = string.Empty;//Initialization of the content of the text boxes
             Text = string.Empty;
             SaveButtonCommand = new RelayCommand(SaveButtonClick);//Binding the Save button control to its function
         }
-
+        /// <summary>
+        /// Save the created SMS
+        /// </summary>
         public void SaveButtonClick()
         {
             //Regex pattern found on

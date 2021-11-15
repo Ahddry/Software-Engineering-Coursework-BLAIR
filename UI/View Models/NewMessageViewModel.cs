@@ -11,6 +11,9 @@ using Coursework1.UI.View;
 
 namespace Coursework1.UI.View_Models
 {
+    /// <summary>
+    /// Intermediary view model to choose between two others.
+    /// </summary>
     public class NewMessageViewModel : MainWindowViewModel
     {
         #region Button
@@ -21,7 +24,9 @@ namespace Coursework1.UI.View_Models
         public new ICommand AdvancedButtonCommand { get; private set; }
         public new UserControl ContentControlBinding { get; private set; }
         #endregion
-
+        /// <summary>
+        /// Intermediary view model to choose between two others.
+        /// </summary>
         public NewMessageViewModel()
         {
             SimpleButtonText = "Simple";
@@ -30,13 +35,17 @@ namespace Coursework1.UI.View_Models
             SimpleButtonCommand = new RelayCommand(SimpleButtonClick);
             AdvancedButtonCommand = new RelayCommand(AdvancedButtonClick);
         }
-
+        /// <summary>
+        /// Switch to the New Message Simple View.
+        /// </summary>
         private void SimpleButtonClick()
         {
             ContentControlBinding = new NMSimpleView();
             OnChanged(nameof(ContentControlBinding));
         }
-
+        /// <summary>
+        /// Switch to the New Message Advanced View.
+        /// </summary>
         private void AdvancedButtonClick()
         {
             ContentControlBinding = new NMAdvancedView();
