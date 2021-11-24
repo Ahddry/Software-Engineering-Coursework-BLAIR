@@ -38,6 +38,8 @@ namespace Coursework1.UI.View_Models
             string path = @$"{ System.IO.Directory.GetCurrentDirectory()}\..\..\..\Saved Messages\";
             #region ReadFiles
             OpenItemCommand = new RelayCommand(OpenItem);
+            //Source:
+            //https://www.codegrepper.com/code-examples/csharp/c%23+read+all+files+in+a+directory
             foreach (string file in Directory.EnumerateFiles(path, "*.json"))
             {
                 string content = File.ReadAllText(file);

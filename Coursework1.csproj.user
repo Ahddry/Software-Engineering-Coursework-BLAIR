@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="UI\View\CreditsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UI\View\EmailCreationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +52,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Theme\MenuButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\View\CreditsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\View\EmailCreationView.xaml">

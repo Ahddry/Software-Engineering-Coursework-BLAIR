@@ -120,16 +120,9 @@ namespace Coursework1.UI.View_Models
                             header += number.ToString();
                         }
                         //Creation of the Sort code
-                        string sortCode = "";
-                        for (int i = 0; i < 4; i++)
-                        {
-                            for (int j = 0; j < 2; j++)
-                            {
-                                int number = random.Next(10);
-                                sortCode += number.ToString();
-                            }
-                            if (i != 3) sortCode += "-";
-                        }
+                        DateTime date = DateTime.Now;
+                        string year = date.Year.ToString();
+                        string sortCode = $"{date.Day}-{date.Month}-{year[2..]}";
                         //Creation of the body
                         string body = $"{EmailAddress}\nSort Code: {sortCode}\nNature of Incident: {NatureOfIncident}\n{Text}";
                         Email email = new(header, body);

@@ -21,7 +21,7 @@
             <StackPanel Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="Click on this button to select the files you want to import" HorizontalAlignment="Center"
                        TextWrapping="WrapWithOverflow"/>
-                <Button Content="Import files" Command="{Binding ChooseFilesCommand}" Height="30" Background="LawnGreen" 
+                <Button Content="Choose files" Command="{Binding ChooseFilesCommand}" Height="30" Background="LawnGreen" 
                     MaxWidth="90" Foreground="Black" BorderBrush="Transparent" Margin="0 5 0 5"/>
                 <ListBox Name="ChosenFiles" ItemsSource="{Binding ChosenFiles}" Background="#2D2D30" Foreground="White" 
                      MinHeight="40" Margin="0 10 0 10"/>
@@ -33,7 +33,7 @@
             <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="Click on this button to import all the file from the folder" HorizontalAlignment="Center"
                        Margin="0 5 0 5" TextWrapping="WrapWithOverflow"/>
-                <Button Content="Import files" Command="{Binding ImportAllCommand}" Height="30" Background="Purple" MaxWidth="90"
+                <Button Content="Import all" Command="{Binding ImportAllCommand}" Height="30" Background="Purple" MaxWidth="90"
                     Foreground="White" BorderBrush="Transparent"/>
             </StackPanel>
         </Grid>

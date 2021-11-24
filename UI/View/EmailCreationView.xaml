@@ -32,7 +32,7 @@
         </StackPanel>
         <TextBlock Text="Email text"/>
         <TextBox Text="{Binding Text}" AcceptsReturn="True" Background=" #2D2D30" Foreground="White" TextWrapping="Wrap" 
-                 VerticalScrollBarVisibility="Auto" MinHeight="150"/>
+                 VerticalScrollBarVisibility="Auto" MinHeight="30" Height="150"/>
         <Button Content="Save Email" Command="{Binding SaveButtonCommand}" Margin="0 20 0 10" 
                 VerticalAlignment="Center" MaxWidth="150" Background=" #2D2D30" Foreground="White"/>
     </StackPanel>

@@ -9,26 +9,24 @@
              Background="#2A2A2C"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <DataGrid ItemsSource="{Binding Messages}" SelectedItem="{Binding SelectedMessage}" IsReadOnly="True" 
+        <DataGrid ItemsSource="{Binding Messages}" SelectedItem="{Binding SelectedMessage}" IsReadOnly="True" 
                       AutoGenerateColumns="False" ColumnHeaderStyle="{StaticResource HeaderStyle}" 
                       Background="#2D2D30" Foreground="White"
                       HorizontalGridLinesBrush="#696969" VerticalGridLinesBrush="#434343" VerticalScrollBarVisibility="Visible" 
                       HorizontalScrollBarVisibility="Auto" RowBackground="#262626" Margin="0 5 0 10"
-                      MaxHeight="420">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Sender" Binding="{Binding Sender}"/>
-                    <DataGridTextColumn Header="Date" Binding="{Binding Date}"/>
-                    <DataGridTextColumn Header="Type" Binding="{Binding Type}"/>
-                    <DataGridTextColumn Header="Header" Binding="{Binding Header}"/>
-                    <DataGridTextColumn Header="Other" Binding="{Binding Other}"/>
-                    <DataGridTextColumn Header="Text" Binding="{Binding Text}"/>
-                </DataGrid.Columns>
-                <DataGrid.InputBindings>
-                    <MouseBinding MouseAction="RightClick" Command="{Binding OpenItemCommand}"/>
-                </DataGrid.InputBindings>
-            </DataGrid>
-        </StackPanel>
+                      Height="auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Sender" Binding="{Binding Sender}"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date}"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}"/>
+                <DataGridTextColumn Header="Header" Binding="{Binding Header}"/>
+                <DataGridTextColumn Header="Other" Binding="{Binding Other}"/>
+                <DataGridTextColumn Header="Text" Binding="{Binding Text}"/>
+            </DataGrid.Columns>
+            <DataGrid.InputBindings>
+                <MouseBinding MouseAction="RightClick" Command="{Binding OpenItemCommand}"/>
+            </DataGrid.InputBindings>
+        </DataGrid>
         <ContentControl Content="{Binding ContentControlBinding}"/>
     </Grid>
 </UserControl>

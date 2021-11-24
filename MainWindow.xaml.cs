@@ -28,6 +28,8 @@ namespace Coursework1
         }
 
         #region Custom Titlebar
+        //Source:
+        //https://www.youtube.com/watch?v=V9DkvcT27WI
         private void DragBorder(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)

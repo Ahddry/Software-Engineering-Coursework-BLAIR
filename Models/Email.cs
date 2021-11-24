@@ -44,7 +44,7 @@ namespace Coursework1.Models
             {
                 SIR = true;
                 int index = Body.IndexOf("Sort Code:"); //Extract the Sort Code if the mail is a SIR
-                SIRSortCode = Body.Substring(index + 11, 11);
+                SIRSortCode = Body.Substring(index + 11, 9);
             }
             else
             {

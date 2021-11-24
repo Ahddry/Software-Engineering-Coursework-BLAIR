@@ -143,8 +143,15 @@ namespace Coursework1.UI.View_Models
                         DataContractJsonSerializer ser = new(typeof(Email));
                         email = ser.ReadObject(ms) as Email;
                         ms.Close();
-                        email.WriteToJSON();
-                        ImportedFiles.Add(new("Email", file));
+                        if (email.Header != null && email.Sender != null && email.Body != null)
+                        {
+                            email.WriteToJSON();
+                            ImportedFiles.Add(new("Email", file));
+                        }
+                        else
+                        {
+                            UnreadableFiles.Add(file);
+                        }
                     }
                     else if (content.Contains("\"Type\":\"SMS\"")) //If it is a SMS
                     {
@@ -155,8 +162,15 @@ namespace Coursework1.UI.View_Models
                         DataContractJsonSerializer ser = new(typeof(SMS));
                         sms = ser.ReadObject(ms) as SMS;
                         ms.Close();
-                        sms.WriteToJSON();
-                        ImportedFiles.Add(new("SMS", file));
+                        if (sms.Header != null && sms.Sender != null && sms.Body != null)
+                        {
+                            sms.WriteToJSON();
+                            ImportedFiles.Add(new("SMS", file));
+                        }
+                        else
+                        {
+                            UnreadableFiles.Add(file);
+                        }
                     }
                     else if (content.Contains("\"Type\":\"Tweet\"")) //If it is a Tweet
                     {
@@ -167,8 +181,15 @@ namespace Coursework1.UI.View_Models
                         DataContractJsonSerializer ser = new(typeof(Tweet));
                         tweet = ser.ReadObject(ms) as Tweet;
                         ms.Close();
-                        tweet.WriteToJSON();
-                        ImportedFiles.Add(new("Tweet", file));
+                        if (tweet.Header != null && tweet.Sender != null && tweet.Body != null)
+                        {
+                            tweet.WriteToJSON();
+                            ImportedFiles.Add(new("Tweet", file));
+                        }
+                        else
+                        {
+                            UnreadableFiles.Add(file);
+                        }
                     }
                     else
                     {   //The unknown files are added in the list
@@ -283,7 +304,11 @@ namespace Coursework1.UI.View_Models
             {   //Display a message to inform the user the the messages were successfully imported
                 successInfo += $"{message.Item1}: {message.Item2}\n";
             }
-            MessageBox.Show(successInfo, "Successfull import", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (!string.IsNullOrWhiteSpace(successInfo))
+            {
+                MessageBox.Show(successInfo, "Successfull import", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            
             UnreadFiles = new ObservableCollection<string>(UnreadableFiles); //Display the path of the messages  that were not imported
             OnChanged(nameof(UnreadFiles));
         }

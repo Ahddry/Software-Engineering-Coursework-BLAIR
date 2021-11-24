@@ -46,3 +46,5 @@ C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Course
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\TweetCreationView.baml
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\StatisticsView.g.cs
 C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\StatisticsView.baml
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\CreditsView.g.cs
+C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\obj\Debug\net5.0-windows\UI\View\CreditsView.baml

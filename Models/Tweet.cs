@@ -137,8 +137,8 @@ namespace Coursework1.Models
         /// </summary>
         private void LoadAbbreviations()
         {
-            //string path = @$"{ System.IO.Directory.GetCurrentDirectory()}\..\..\..\Other\textwords.csv";
-            string path = @"C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\Other\textwords.csv";
+            string path = @$"{ System.IO.Directory.GetCurrentDirectory()}\..\..\..\Other\textwords.csv";
+            //string path = @"C:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\Other\textwords.csv";
             try
             {
                 string[] info = File.ReadAllLines(path);
