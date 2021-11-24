@@ -1,0 +1,1 @@
+{"Body":"test@type.com\nJust a test\nThis is a test Email.\r\n\r\nWe convert mails to JSON.\r\n\r\ncool","Date":"05\/11\/2021 15:03:13","Header":"E987654321","Object":"Just a test","Other":"Object: Just a test","Sender":"test@type.com","Text":"This is a test Email.\r\n\r\nWe convert mails to JSON.\r\n\r\ncool","Type":"Email","QuarantinedLinks":null,"SIR":false,"SIRSortCode":""}

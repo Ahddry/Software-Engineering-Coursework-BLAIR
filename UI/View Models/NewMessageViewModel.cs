@@ -3,54 +3,53 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using Coursework1.Core;
+using Coursework1.UI.View;
 
 namespace Coursework1.UI.View_Models
 {
-    public class NewMessageViewModel : BaseViewModel
+    /// <summary>
+    /// Intermediary view model to choose between two others.
+    /// </summary>
+    public class NewMessageViewModel : MainWindowViewModel
     {
-        #region TextBlock Content
-        public string HeaderTextBlock { get; private set; }
-        public string BodyTextBlock { get; private set; }
-        #endregion
-
-        #region TextBox Content
-        public string HeaderTextBox { get; set; }
-        public string BodyTextBox { get; set; }
-        #endregion
-
         #region Button
-        public string SaveButtonText { get; private set; }
-        public string BackButtonText { get; private set; }
+        public string SimpleButtonText { get; private set; }
+        public string AdvancedButtonText { get; private set; }
 
-        public ICommand SaveButtonCommand { get; private set; }
-        public ICommand BackButtonCommand { get; private set; }
+        public new ICommand SimpleButtonCommand { get; private set; }
+        public new ICommand AdvancedButtonCommand { get; private set; }
+        public new UserControl ContentControlBinding { get; private set; }
         #endregion
-
+        /// <summary>
+        /// Intermediary view model to choose between two others.
+        /// </summary>
         public NewMessageViewModel()
         {
-            HeaderTextBlock = "Header";
-            BodyTextBlock = "Body";
+            SimpleButtonText = "Simple";
+            AdvancedButtonText = "Advanced";
 
-            HeaderTextBox = string.Empty;
-            BodyTextBox = string.Empty;
-
-            SaveButtonText = "Save Message";
-            BackButtonText = "Go back";
-
-            SaveButtonCommand = new RelayCommand(SaveButtonClick);
-            BackButtonCommand = new RelayCommand(BackButtonClick);
+            SimpleButtonCommand = new RelayCommand(SimpleButtonClick);
+            AdvancedButtonCommand = new RelayCommand(AdvancedButtonClick);
         }
-
-        private void SaveButtonClick()
+        /// <summary>
+        /// Switch to the New Message Simple View.
+        /// </summary>
+        private void SimpleButtonClick()
         {
-
+            ContentControlBinding = new NMSimpleView();
+            OnChanged(nameof(ContentControlBinding));
         }
-
-        private void BackButtonClick()
+        /// <summary>
+        /// Switch to the New Message Advanced View.
+        /// </summary>
+        private void AdvancedButtonClick()
         {
-
+            ContentControlBinding = new NMAdvancedView();
+            OnChanged(nameof(ContentControlBinding));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Coursework1.UI.View_Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace Coursework1.UI.View
         public ImportMessagesView()
         {
             InitializeComponent();
+            this.DataContext = new ImportMessagesViewModel();
         }
     }
 }

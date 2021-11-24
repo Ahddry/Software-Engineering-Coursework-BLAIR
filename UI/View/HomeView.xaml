@@ -5,13 +5,131 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Coursework1.UI.View"
              mc:Ignorable="d" 
+             Foreground="White"
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <TextBlock Text="Home" FontSize="28" Foreground="White"
-                   HorizontalAlignment="Left" Margin=" 0 0 0 20"/>
-        <StackPanel Orientation="Horizontal">
-            <Button Width="400" Height="400" Background="Orange"/>
-            <Button Width="400" Height="400" Background="DarkMagenta"/>
-        </StackPanel>
-    </StackPanel>
+    <Grid>
+        <Grid Margin="0 0 0 20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <FlowDocumentScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" IsToolBarVisible="True" 
+                                      Grid.Row="0" FontFamily="SegoeUI">
+                <FlowDocument>
+                    <Paragraph FontSize="26" FontFamily="SegoeUI" FontWeight="SemiBold">
+                        Welcome to Napier Bank Messaging app!
+                    </Paragraph>
+                    <Paragraph FontSize="18" FontFamily="SegoeUI">
+                        This page will give you a quick review about how your messaging application works.
+                        <LineBreak/>
+                        Different sections are accessible through the side
+                        <Bold>Menu</Bold> on the left of the window. You just need to click on the different 
+                        buttons to navigate through the sections.
+                    </Paragraph>
+                    <Paragraph FontSize="22" FontFamily="SegoeUI" FontWeight="SemiBold" >
+                        New Message:
+                    </Paragraph>
+                    <Paragraph FontSize="18" FontFamily="SegoeUI">
+                        To create a
+                        <Bold>New Message</Bold>, you need to click on the
+                        <Bold>New Message</Bold> button of the side
+                        <Bold>Menu</Bold>.
+                            Then, you are given two options, you can either choose the
+                        <Span Foreground="DarkOrange" FontWeight="SemiBold">Simple</Span>
+                        message creation or the
+                        <Span Foreground="DarkMagenta" FontWeight="SemiBold">Advanced</Span>.
+                        <LineBreak/>
+                        <LineBreak/>
+                        If you choose the
+                        <Span Foreground="DarkOrange" FontWeight="SemiBold">Simple</Span> button, 
+                            you will get to choose to either create an
+                        <Bold>SMS</Bold>, an
+                        <Bold>Email</Bold> or a
+                        <Bold>Tweet</Bold>.
+                        <LineBreak/>
+                        Then, you just need to fill in the blanks, simple!
+                        <LineBreak/>
+                        <LineBreak/>
+                        Don't forget to fill all the boxes before clicking on the
+                        <Bold>Save</Bold> button!
+                        <LineBreak/>
+                        If you choose the
+                        <Span Foreground="DarkMagenta" FontWeight="SemiBold">Advanced</Span>
+                        button, two textboxes will show, one for the
+                        <Bold>Header</Bold>
+                        and one for the
+                        <Bold>Body</Bold>.
+                        <LineBreak/>
+                        The
+                        <Bold>Header</Bold> must be a letter ("S" for SMS, "E" for Email or "T" for Tweet")
+                        followed by 9 digits (e.g. "S123456789").
+                        <LineBreak/>
+                        The <Bold>Body</Bold> structure depends on the type of the message you want to write:
+                        <LineBreak/>
+                        - For an
+                        <Bold>SMS</Bold> : Write the international phone number of the sender 
+                        (e.g. "+44123456789") on the first line, followed by the
+                        <Bold>Message Text</Bold>.
+                        <LineBreak/>
+                        - For an
+                        <Bold>Email</Bold> : Write the email address of the sender 
+                        (e.g. "example.me@test.com") on the first line, followed by the
+                        <Bold>Object</Bold> of your message on the second line and the
+                        <Bold>Message Text</Bold> on the lines below if the mail is a
+                        <Bold>Standard</Bold> Email. However, if you want to write a significant report, then the
+                        second line sould be "<Italic>Sort Code:</Italic>" followed by the <Bold>Sort Code</Bold>, 
+                        with the <Bold>Nature of Incident</Bold> on the third line. The fourth line is dedicated 
+                        to the <Bold>Message Text</Bold>. <LineBreak/>
+                        - For a <Bold>Tweet</Bold> : Write the username of the sender 
+                        (e.g. "@Username3") on the first line, followed by the
+                        <Bold>Message Text</Bold>.
+                        <LineBreak/>
+                        When you are done, just hit the <Bold>Save</Bold> button.
+                    </Paragraph>
+                    <Paragraph FontSize="22" FontFamily="SegoeUI" FontWeight="SemiBold" >
+                        Import Messages:
+                    </Paragraph>
+                    <Paragraph FontSize="18" FontFamily="SegoeUI">
+                        You can import existing messages from external sources. They need to be either
+                        <Bold>.txt</Bold> or <Bold>.json</Bold> files. <LineBreak/>
+                        You can click on the
+                        <Span Foreground="LawnGreen" FontWeight="SemiBold">Choose Files</Span> button to open a
+                        dialog that will allow you to select files to import, and then click on the
+                        <Span Foreground="DarkOrange" FontWeight="SemiBold">Import Files</Span> button to import them.
+                        <LineBreak/>
+                        You can also click on the
+                        <Span Foreground="DarkMagenta" FontWeight="SemiBold">Import all</Span> button to import all
+                        the files stored in the <Bold>Import Messages</Bold> folder of your NBM application files.
+                        <LineBreak/>
+                        If a message is unreadable, it will be marked as so at the bottom of your screen.
+                    </Paragraph>
+                    <Paragraph FontSize="22" FontFamily="SegoeUI" FontWeight="SemiBold" >
+                        Read Messages:
+                    </Paragraph>
+                    <Paragraph FontSize="18" FontFamily="SegoeUI">
+                        You find all the saved messages under the <Bold>Read Messages</Bold> section. <LineBreak/>
+                        Just like in Excel you can sort them by clicking on the name of the columns.
+                        <LineBreak/>
+                        If you want to <Bold>open</Bold> a message in fullscreen, you first need to select it
+                        and then press <Bold>Right click</Bold>. <LineBreak/>
+                        You can then see much more detailed informations on a message. You can use the three buttons
+                        at the top of that screen to either
+                        <Span Foreground="Red" FontWeight="SemiBold">Go back</Span> to the data grid, or navigate
+                        to the
+                        <Span Foreground="DarkOrange" FontWeight="SemiBold">Previous</Span> or to the
+                        <Span Foreground="#1D9BF0" FontWeight="SemiBold">Next</Span> message of the list.
+                    </Paragraph>
+                    <Paragraph FontSize="22" FontFamily="SegoeUI" FontWeight="SemiBold" >
+                        Statistics:
+                    </Paragraph>
+                    <Paragraph FontSize="18" FontFamily="SegoeUI">
+                        You can then read some informations and <Bold>Statistics</Bold> if you click
+                        on the <Bold>Statistics</Bold> button of the side <Bold>Menu</Bold>.
+                    </Paragraph> 
+                </FlowDocument>
+            </FlowDocumentScrollViewer>
+            <Button Grid.Row="1" Content="Credits" Command="{Binding CreditButtonCommand}" HorizontalAlignment="Center"/>
+        </Grid>
+        <ContentControl Content="{Binding ContentControlBinding}"/>
+    </Grid>
 </UserControl>

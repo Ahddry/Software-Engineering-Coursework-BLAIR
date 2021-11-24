@@ -1,5 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Custom theme for the XAML RadioButtons, from BinaryBunny YouTube video 
+    https://www.youtube.com/watch?v=PzP8mw7JUzI-->
     <Style BasedOn="{StaticResource {x:Type ToggleButton}}" TargetType="{x:Type RadioButton}">
         <Style.Setters>
             <Setter Property="Template">

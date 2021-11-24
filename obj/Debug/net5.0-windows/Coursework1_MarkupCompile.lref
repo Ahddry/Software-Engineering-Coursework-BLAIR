@@ -1,8 +1,16 @@
 ﻿
 FC:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\App.xaml;;
 FC:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\MainWindow.xaml;;
+FC:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\UI\View\CreditsView.xaml;;
+FC:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\UI\View\EmailCreationView.xaml;;
 FC:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\UI\View\HomeView.xaml;;
 FC:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\UI\View\ImportMessagesView.xaml;;
 FC:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\UI\View\NewMessageView.xaml;;
+FC:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\UI\View\NMAdvancedView.xaml;;
+FC:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\UI\View\NMSimpleView.xaml;;
 FC:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\UI\View\ReadMessagesView.xaml;;
+FC:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\UI\View\SingleMessageView.xaml;;
+FC:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\UI\View\SMSCreationView.xaml;;
+FC:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\UI\View\StatisticsView.xaml;;
+FC:\Users\blair\OneDrive\Documents\Travail\Software Engineering\Coursework\Coursework1\UI\View\TweetCreationView.xaml;;
 

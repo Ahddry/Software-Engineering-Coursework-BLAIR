@@ -7,23 +7,18 @@
              mc:Ignorable="d"
              Foreground="White"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
-        </Grid.RowDefinitions>
-
-        <StackPanel Grid.Row="0">
-            <!--Row 1-->
-            <TextBlock Text="{Binding HeaderTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-            <TextBox Text="{Binding HeaderTextBox}" VerticalAlignment="Center" Background=" #2D2D30" Foreground="White" MinHeight="30" MaxHeight="250"/>
-
-            <!--Row 2-->
-            <TextBlock Text="{Binding BodyTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            <TextBox Text="{Binding BodyTextBox}" VerticalAlignment="Center" Background=" #2D2D30" Foreground="White" MinHeight="200"/>
-        </StackPanel>
-        <StackPanel Grid.Row="1">
-            <Button Content="{Binding SaveButtonText}" Command="{Binding SaveButtonCommand}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" MaxWidth="150" Background=" #2D2D30" Foreground="White"/>
-        </StackPanel>
+    <Grid Margin="20 20 20 20" x:Name="grid">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Content="{Binding SimpleButtonText}" Command="{Binding SimpleButtonCommand}" 
+                MinWidth="60" MinHeight="40" MaxWidth="600" MaxHeight="400" Background="Orange"/>
+            <Button Grid.Column="2" Grid.Row="0" Content="{Binding AdvancedButtonText}" Command="{Binding AdvancedButtonCommand}" 
+                MinWidth="60" MinHeight="40" MaxWidth="600" MaxHeight="400" Background="DarkMagenta"/>
+        </Grid>
+        <ContentControl Content="{Binding ContentControlBinding}"/>
     </Grid>
 </UserControl>

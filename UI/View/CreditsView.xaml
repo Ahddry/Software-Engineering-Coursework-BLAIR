@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="Coursework1.UI.View.CreditsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Coursework1.UI.View"
+             mc:Ignorable="d"   
+             Foreground="White"
+             Background="#2A2A2C"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <FlowDocumentScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" IsToolBarVisible="True" 
+                              FontFamily="SegoeUI">
+        <FlowDocument>
+            <Paragraph FontSize="25" FontFamily="SegoeUI" FontWeight="SemiBold" TextAlignment="Center">
+                - CREDITS -
+            </Paragraph>
+            <Paragraph FontSize="22" FontFamily="SegoeUI" TextAlignment="Center">
+                Author:
+                Adrien Blair
+            </Paragraph>
+            <Paragraph FontSize="14" FontFamily="SegoeUI">
+                Edinburgh, the 26th of November
+            </Paragraph>
+            <Paragraph FontSize="18" FontFamily="SegoeUI">
+                All the code used to create this application is my creation or comes from a practical I
+                worked on either here, at Napier University, or back at my school, in Paris. If not, it is 
+                specified either in the comments of the code itself or down on this page. <LineBreak/> <LineBreak/>
+                External Sources: <LineBreak/>
+                - Code to serialize/deserialize a C# object into a JSON object, from the Microsoft documentation <LineBreak/>
+                  https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-how-to?pivots=dotnet-5-0 <LineBreak/>
+                  https://docs.microsoft.com/en-us/dotnet/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data
+                <LineBreak/>
+                <LineBreak/>
+                - Regex Pattern to find an email address, from regex101.com <LineBreak/>  
+                  https://regex101.com/r/SOgUIV/1
+                <LineBreak/>
+                <LineBreak/>
+                - Regex Pattern to find URLs, from Microsoft forums <LineBreak/>  
+                  https://social.msdn.microsoft.com/Forums/vstudio/en-US/af82ce78-6aa7-43cc-8a10-cdacd9b93728/find-url-from-a-text-file-in-c?forum=csharpgeneral
+                <LineBreak/>
+                <LineBreak/>
+                - Regex Pattern to find International Phone Numbers, from Stackoverflow <LineBreak/>  
+                  https://stackoverflow.com/a/19133469 
+                <LineBreak/>
+                <LineBreak/>
+                - Custom theme for the XAML DataGrid, based on hqf00342's GitHub post <LineBreak/>  
+                  https://gist.github.com/hqf00342/199e53c638d2899445aa
+                <LineBreak/>
+                <LineBreak/>
+                - Custom theme for the XAML DataGrid headers, based on Stackoverflow post <LineBreak/>  
+                  https://stackoverflow.com/a/36317591
+                <LineBreak/>
+                <LineBreak/>
+                - Custom theme for the XAML RadioButtons, from BinaryBunny YouTube video <LineBreak/>  
+                  https://www.youtube.com/watch?v=PzP8mw7JUzI
+                <LineBreak/>
+                <LineBreak/>
+                - XAML/C# code for the custom TitleBar, from BinaryBunny YouTube video <LineBreak/>  
+                  https://www.youtube.com/watch?v=V9DkvcT27WI
+                <LineBreak/>
+                <LineBreak/>
+                - XAML code to hide or show a StackPanel, from Stackoverflow <LineBreak/>  
+                  https://stackoverflow.com/a/29768567
+                <LineBreak/>
+                <LineBreak/>
+                - Read all files from a directory, from codegrepper.com <LineBreak/>  
+                  https://www.codegrepper.com/code-examples/csharp/c%23+read+all+files+in+a+directory
+                
+            </Paragraph>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
+</UserControl>
