@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Coursework1.Models
@@ -125,7 +122,7 @@ namespace Coursework1.Models
                 Sender = matches[0].ToString();
                 if (matches.Count > 1)
                 {
-                    for (int i = 1; i < matches.Count; i++) 
+                    for (int i = 1; i < matches.Count; i++)
                     {
                         Mentions[i - 1] = matches[i].ToString();
                     }

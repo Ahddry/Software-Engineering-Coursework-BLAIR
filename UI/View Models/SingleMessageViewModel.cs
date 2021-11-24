@@ -104,9 +104,9 @@ namespace Coursework1.UI.View_Models
                     Date = email.Date;
                     ButtonName = " Show Qurantined URLs ";
                     QuarantinedLinks = email.QuarantinedLinks;
-                    if(email.SIR) //if the email is a SIR
+                    if (email.SIR) //if the email is a SIR
                     {   //add the Sort code and the nature of incident as the import infos to be displayed
-                        OtherOption1 = "SIR Sort Code:"; 
+                        OtherOption1 = "SIR Sort Code:";
                         OtherOption2 = email.SIRSortCode;
                         OtherOption3 = "Nature of Incident:";
                         OtherOption4 = email.NatureOfIncident;
@@ -172,7 +172,7 @@ namespace Coursework1.UI.View_Models
         /// </summary>
         public void NextButtonClick()
         {
-            if (Index < ReadMessages.Count-1)//If this message is not the already the last of the list
+            if (Index < ReadMessages.Count - 1)//If this message is not the already the last of the list
             {
                 ContentControlBinding = new SingleMessageView(ReadMessages[Index + 1].GetPath(), Index + 1, ReadMessages);
                 OnChanged(nameof(ContentControlBinding));

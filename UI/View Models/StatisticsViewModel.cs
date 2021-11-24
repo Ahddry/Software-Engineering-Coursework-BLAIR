@@ -1,13 +1,9 @@
 ﻿using Coursework1.Models;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Json;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace Coursework1.UI.View_Models
 {
@@ -42,7 +38,7 @@ namespace Coursework1.UI.View_Models
             SocialMediasHashtagsStats = new(HashtagsList);
             SMSNumber = "0"; EmailNumber = "0"; TweetNumber = "0";
             int smsCount = 0, emailCount = 0, tweetCount = 0, noiCount = 0, mentionCount = 0, hashtagCount = 0;
-            
+
             List<string> foundSirNoI = new();
             List<string> foundMentions = new();
             SortedSet<string> existingMentions = new();

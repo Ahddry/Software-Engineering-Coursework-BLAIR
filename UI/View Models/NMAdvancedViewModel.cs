@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using Coursework1.Core;
+using Coursework1.Models;
 using System.Windows;
 using System.Windows.Input;
-using Coursework1.Core;
-using Coursework1.Models;
-using Microsoft.Win32;
 
 namespace Coursework1.UI.View_Models
 {

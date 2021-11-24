@@ -1,15 +1,11 @@
 ﻿using Coursework1.Core;
 using Coursework1.Models;
 using Coursework1.UI.View;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Json;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -33,7 +29,7 @@ namespace Coursework1.UI.View_Models
         /// </summary>
         public ReadMessagesViewModel()
         {
-            ReadMessages = new(); 
+            ReadMessages = new();
             //Read all the files in the Saved Messages folder
             string path = @$"{ System.IO.Directory.GetCurrentDirectory()}\..\..\..\Saved Messages\";
             #region ReadFiles
@@ -91,7 +87,7 @@ namespace Coursework1.UI.View_Models
         /// </summary>
         public void OpenItem()
         {
-            if(SelectedMessage.Type != "Unknown")
+            if (SelectedMessage.Type != "Unknown")
             {
                 ContentControlBinding = new SingleMessageView(SelectedMessage.GetPath(), ReadMessages.IndexOf(SelectedMessage), ReadMessages);
                 OnChanged(nameof(ContentControlBinding));
