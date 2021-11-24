@@ -7,17 +7,29 @@
              mc:Ignorable="d"
              Foreground="White"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="20 20 20 20" x:Name="grid">
-        <Grid>
+    <Grid Margin="15 15 15 15">
+        <Grid Margin="5 5 5 5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="10*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Grid.Row="0" Content="{Binding SimpleButtonText}" Command="{Binding SimpleButtonCommand}" 
-                MinWidth="60" MinHeight="40" MaxWidth="600" MaxHeight="400" Background="Orange"/>
-            <Button Grid.Column="2" Grid.Row="0" Content="{Binding AdvancedButtonText}" Command="{Binding AdvancedButtonCommand}" 
-                MinWidth="60" MinHeight="40" MaxWidth="600" MaxHeight="400" Background="DarkMagenta"/>
+            <Border Grid.Column="0" MinWidth="60" MinHeight="40" MaxWidth="600" MaxHeight="400" Background="Orange" CornerRadius="45">
+                <Button  Command="{Binding SimpleButtonCommand}" 
+                         Background="Transparent" BorderBrush="Transparent">
+                    <TextBlock Text="{Binding SimpleButtonText}" FontSize="35" VerticalAlignment="Bottom" 
+                               Foreground="White" FontWeight="Black"/>
+                </Button>
+            </Border>
+
+            <Border Grid.Column="2" MinWidth="60" MinHeight="40" MaxWidth="600" MaxHeight="400" Background="DarkMagenta" CornerRadius="45">
+                <Button  Command="{Binding AdvancedButtonCommand}" 
+                Background="Transparent" BorderBrush="Transparent">
+                    <TextBlock Text="{Binding AdvancedButtonText}" FontSize="35" VerticalAlignment="Bottom" 
+                               Foreground="White" FontWeight="Black"/>
+                </Button>
+            </Border>
+            
         </Grid>
         <ContentControl Content="{Binding ContentControlBinding}"/>
     </Grid>

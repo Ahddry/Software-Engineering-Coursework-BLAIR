@@ -77,9 +77,11 @@
                         <Bold>Object</Bold> of your message on the second line and the
                         <Bold>Message Text</Bold> on the lines below if the mail is a
                         <Bold>Standard</Bold> Email. However, if you want to write a significant report, then the
-                        second line sould be "<Italic>Sort Code:</Italic>" followed by the <Bold>Sort Code</Bold>, 
-                        with the <Bold>Nature of Incident</Bold> on the third line. The fourth line is dedicated 
-                        to the <Bold>Message Text</Bold>. <LineBreak/>
+                        second line sould be "<Italic>Sort Code:</Italic>" followed by the <Bold>Sort Code</Bold>. 
+                        The line after is dedicated to the <Bold>Nature of Incident</Bold>, 
+                        you need to write "<Italic>Nature of Incident:</Italic>", followed by 
+                        one of the possible Natures of Incident.
+                        The fourth line is dedicated to the <Bold>Message Text</Bold>. <LineBreak/>
                         - For a <Bold>Tweet</Bold> : Write the username of the sender 
                         (e.g. "@Username3") on the first line, followed by the
                         <Bold>Message Text</Bold>.
@@ -128,7 +130,14 @@
                     </Paragraph> 
                 </FlowDocument>
             </FlowDocumentScrollViewer>
-            <Button Grid.Row="1" Content="Credits" Command="{Binding CreditButtonCommand}" HorizontalAlignment="Center"/>
+            <Border Grid.Row="1" HorizontalAlignment="Center" Background="DarkOrange" CornerRadius="15"
+                    Width="135">
+                <Button Command="{Binding CreditButtonCommand}" 
+                        Background="Transparent" BorderBrush="Transparent">
+                    <TextBlock Text="Credits" Foreground="White" FontSize="16" VerticalAlignment="Center" FontWeight="SemiBold"/>
+                </Button>
+            </Border>
+            
         </Grid>
         <ContentControl Content="{Binding ContentControlBinding}"/>
     </Grid>

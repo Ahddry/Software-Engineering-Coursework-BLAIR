@@ -19,12 +19,30 @@
                 <ColumnDefinition Width="10*"/>
             </Grid.ColumnDefinitions>
             <StackPanel HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0">
-                <Button Content=" Go Back " Margin="10 0 10 0" 
-                    Command="{Binding BackButtonCommand}" Background="#CC0000" Foreground="White" Height="30"/>
+                <Border Grid.Row="0" HorizontalAlignment="Center" Background="#CC0000" CornerRadius="15"
+                    Width="80" Height="30" Margin="10 0 10 0">
+                    <Button Command="{Binding BackButtonCommand}" 
+                        Background="Transparent" BorderBrush="Transparent">
+                        <TextBlock Text="Go Back" Foreground="White" FontSize="16" VerticalAlignment="Center" 
+                                   FontWeight="SemiBold" Margin="0 -2 0 0"/>
+                    </Button>
+                </Border>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" >
-                <Button Content=" Previous " Margin="0 0 10 0" Command="{Binding PreviousButtonCommand}" Background="Orange"/>
-                <Button Content=" Next " Margin="0 0 10 0" Command="{Binding NextButtonCommand}" Background="#1D9BF0"/>
+                <Border Grid.Row="0" HorizontalAlignment="Center" Background="Orange" CornerRadius="15"
+                    Width="80" Height="30" Margin="0 0 10 0">
+                    <Button Command="{Binding PreviousButtonCommand}" Background="Transparent" BorderBrush="Transparent">
+                        <TextBlock Text="Previous" Foreground="White" FontSize="16" VerticalAlignment="Center" 
+                                   FontWeight="SemiBold" Margin="0 -2 0 0"/>
+                    </Button>
+                </Border>
+                <Border Grid.Row="0" HorizontalAlignment="Center" Background="#1D9BF0" CornerRadius="15"
+                    Width="80" Height="30" Margin="0 0 10 0">
+                    <Button Command="{Binding NextButtonCommand}" Background="Transparent" BorderBrush="Transparent">
+                        <TextBlock Text="Previous" Foreground="White" FontSize="16" VerticalAlignment="Center" 
+                                   FontWeight="SemiBold" Margin="0 -2 0 0"/>
+                    </Button>
+                </Border>
             </StackPanel>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Type}" HorizontalAlignment="Right" FontSize="20" Margin="0 15 0 0"/>
             

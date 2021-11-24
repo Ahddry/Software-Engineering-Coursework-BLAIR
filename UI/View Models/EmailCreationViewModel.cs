@@ -2,10 +2,7 @@
 using Coursework1.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -42,6 +39,7 @@ namespace Coursework1.UI.View_Models
         /// </summary>
         public EmailCreationViewModel()
         {
+            #region Setup
             EmailAddress = string.Empty;//Initialization of the content of the text boxes
             NatureOfIncident = string.Empty;
             ListOfIncidents = new(); //Add all the possible Natures of incident
@@ -63,6 +61,7 @@ namespace Coursework1.UI.View_Models
             SIROnCommand = new RelayCommand(SIROnButtonClick);//Binding the SIROn radiobutton control to its function
             SIROffCommand = new RelayCommand(SIROffButtonClick);//Binding the SIROff button control to its function
             SaveButtonCommand = new RelayCommand(SaveButtonClick);//Binding the Save button control to its function
+            #endregion
         }
         /// <summary>
         /// Switch to a SIR mail

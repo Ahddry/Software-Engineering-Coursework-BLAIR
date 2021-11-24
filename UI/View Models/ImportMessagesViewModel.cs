@@ -1,17 +1,14 @@
-﻿using System;
+﻿using Coursework1.Core;
+using Coursework1.Models;
+using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Json;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Data;
 using System.Windows.Input;
-using Coursework1.Core;
-using Coursework1.Models;
-using Microsoft.Win32;
 
 namespace Coursework1.UI.View_Models
 {
@@ -300,7 +297,7 @@ namespace Coursework1.UI.View_Models
                 #endregion
             }
             string successInfo = "Successfully imported the following files:\n";
-            foreach (Tuple<string,string> message in ImportedFiles)
+            foreach (Tuple<string, string> message in ImportedFiles)
             {   //Display a message to inform the user the the messages were successfully imported
                 successInfo += $"{message.Item1}: {message.Item2}\n";
             }
@@ -308,7 +305,7 @@ namespace Coursework1.UI.View_Models
             {
                 MessageBox.Show(successInfo, "Successfull import", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            
+
             UnreadFiles = new ObservableCollection<string>(UnreadableFiles); //Display the path of the messages  that were not imported
             OnChanged(nameof(UnreadFiles));
         }
