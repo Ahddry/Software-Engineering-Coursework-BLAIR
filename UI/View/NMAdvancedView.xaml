@@ -8,6 +8,7 @@
              Foreground="White"
              Background="#2A2A2C"
              d:DesignHeight="450" d:DesignWidth="800">
+    <!--View to create messages with 2 textboxes-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -15,12 +16,9 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0">
-            <!--Row 1-->
             <TextBlock Text="{Binding HeaderTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
             <TextBox Text="{Binding HeaderTextBox}" VerticalAlignment="Center" Background=" #2D2D30" Foreground="White" MinHeight="30" MaxHeight="200"
                      TextWrapping="Wrap" AcceptsReturn="False" VerticalScrollBarVisibility="Auto"/>
-
-            <!--Row 2-->
             <TextBlock Text="{Binding BodyTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <TextBox Text="{Binding BodyTextBox}" VerticalAlignment="Center" Background=" #2D2D30" Foreground="White" MinHeight="200" MaxHeight="400"
                      TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>

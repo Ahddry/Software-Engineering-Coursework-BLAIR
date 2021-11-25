@@ -8,6 +8,7 @@
              Foreground="White"
              Background="#2A2A2C"
              d:DesignHeight="450" d:DesignWidth="800">
+    <!--Flow Document style View that writes the Credits to the screen-->
     <FlowDocumentScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" IsToolBarVisible="True" 
                               FontFamily="SegoeUI">
         <FlowDocument>
@@ -17,6 +18,13 @@
             <Paragraph FontSize="22" FontFamily="SegoeUI" TextAlignment="Center">
                 Author:
                 Adrien Blair
+            </Paragraph>
+            <Paragraph FontSize="10" FontFamily="SegoeUI" TextAlignment="Center">
+                <Span Foreground="#329292" FontWeight="SemiBold">ECE School of Engineering</Span>,
+                37 Quai de Grenelle, 75015 Paris, France
+                <LineBreak/>
+                <Span Foreground="#FF2739" FontWeight="SemiBold">Edinburgh Napier University</Span>,
+                10 Colinton Rd, Edinburgh EH10 5DT, Scotland
             </Paragraph>
             <Paragraph FontSize="14" FontFamily="SegoeUI">
                 Edinburgh, the 26th of November

@@ -10,6 +10,7 @@
         ResizeMode="CanResizeWithGrip"
         AllowsTransparency="True"
         Title="NBM"  Height="450" Width="800" MinHeight="325" MinWidth="450">
+    <!--Main window and general frame of the app, with the side-menu and the custom Title bar-->
     <Window.DataContext>
         <view_models:BaseViewModel/>
     </Window.DataContext>

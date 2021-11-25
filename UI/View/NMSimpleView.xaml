@@ -8,6 +8,7 @@
              Background="#2A2A2C"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <!--View to create messages with a form-->
     <StackPanel Orientation="Vertical">
         <TextBlock Text="Choose from the message types and write your message" FontSize="17" FontWeight="DemiBold"/>
         <Grid>

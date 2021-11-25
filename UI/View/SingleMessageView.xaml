@@ -8,6 +8,7 @@
              Foreground="White"
              Background="#2A2A2C"
              d:DesignHeight="450" d:DesignWidth="800">
+    <!--View to read a message in fullscreen-->
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -39,7 +40,7 @@
                 <Border Grid.Row="0" HorizontalAlignment="Center" Background="#1D9BF0" CornerRadius="15"
                     Width="80" Height="30" Margin="0 0 10 0">
                     <Button Command="{Binding NextButtonCommand}" Background="Transparent" BorderBrush="Transparent">
-                        <TextBlock Text="Previous" Foreground="White" FontSize="16" VerticalAlignment="Center" 
+                        <TextBlock Text="Next" Foreground="White" FontSize="16" VerticalAlignment="Center" 
                                    FontWeight="SemiBold" Margin="0 -2 0 0"/>
                     </Button>
                 </Border>

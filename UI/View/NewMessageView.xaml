@@ -7,6 +7,7 @@
              mc:Ignorable="d"
              Foreground="White"
              d:DesignHeight="450" d:DesignWidth="800">
+    <!--View to choose to betweet to other views to create messages-->
     <Grid Margin="15 15 15 15">
         <Grid Margin="5 5 5 5">
             <Grid.ColumnDefinitions>

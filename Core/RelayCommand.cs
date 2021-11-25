@@ -4,7 +4,7 @@ using System.Windows.Input;
 namespace Coursework1.Core
 {
     /// <summary>
-    /// 
+    /// Class that handles the controls of the buttons
     /// </summary>
     public class RelayCommand : ICommand
     {

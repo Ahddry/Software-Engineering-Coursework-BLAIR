@@ -7,12 +7,14 @@
              mc:Ignorable="d" 
              Foreground="White"
              d:DesignHeight="450" d:DesignWidth="800">
+    <!--Home page View-->
     <Grid>
         <Grid Margin="0 0 0 20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="25"/>
             </Grid.RowDefinitions>
+            <!--Text of the page-->
             <FlowDocumentScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" IsToolBarVisible="True" 
                                       Grid.Row="0" FontFamily="SegoeUI">
                 <FlowDocument>
@@ -40,7 +42,7 @@
                         <Span Foreground="DarkMagenta" FontWeight="SemiBold">Advanced</Span>.
                         <LineBreak/>
                         <LineBreak/>
-                        If you choose the
+                        If you select the
                         <Span Foreground="DarkOrange" FontWeight="SemiBold">Simple</Span> button, 
                             you will get to choose to either create an
                         <Bold>SMS</Bold>, an
@@ -49,9 +51,9 @@
                         <LineBreak/>
                         Then, you just need to fill in the blanks, simple!
                         <LineBreak/>
-                        <LineBreak/>
                         Don't forget to fill all the boxes before clicking on the
                         <Bold>Save</Bold> button!
+                        <LineBreak/>
                         <LineBreak/>
                         If you choose the
                         <Span Foreground="DarkMagenta" FontWeight="SemiBold">Advanced</Span>
@@ -61,7 +63,7 @@
                         <Bold>Body</Bold>.
                         <LineBreak/>
                         The
-                        <Bold>Header</Bold> must be a letter ("S" for SMS, "E" for Email or "T" for Tweet")
+                        <Bold>Header</Bold> must be a letter ("S" for SMS, "E" for Email or "T" for Tweet)
                         followed by 9 digits (e.g. "S123456789").
                         <LineBreak/>
                         The <Bold>Body</Bold> structure depends on the type of the message you want to write:
@@ -76,8 +78,9 @@
                         (e.g. "example.me@test.com") on the first line, followed by the
                         <Bold>Object</Bold> of your message on the second line and the
                         <Bold>Message Text</Bold> on the lines below if the mail is a
-                        <Bold>Standard</Bold> Email. However, if you want to write a significant report, then the
-                        second line sould be "<Italic>Sort Code:</Italic>" followed by the <Bold>Sort Code</Bold>. 
+                        <Bold>Standard</Bold> Email. However, if you want to write a 
+                        <Bold>Significant Incident Report</Bold>, then the
+                        second line should be "<Italic>Sort Code:</Italic>" followed by the <Bold>Sort Code</Bold>. 
                         The line after is dedicated to the <Bold>Nature of Incident</Bold>, 
                         you need to write "<Italic>Nature of Incident:</Italic>", followed by 
                         one of the possible Natures of Incident.
@@ -85,6 +88,7 @@
                         - For a <Bold>Tweet</Bold> : Write the username of the sender 
                         (e.g. "@Username3") on the first line, followed by the
                         <Bold>Message Text</Bold>.
+                        <LineBreak/>
                         <LineBreak/>
                         When you are done, just hit the <Bold>Save</Bold> button.
                     </Paragraph>
@@ -112,9 +116,9 @@
                         You find all the saved messages under the <Bold>Read Messages</Bold> section. <LineBreak/>
                         Just like in Excel you can sort them by clicking on the name of the columns.
                         <LineBreak/>
-                        If you want to <Bold>open</Bold> a message in fullscreen, you first need to select it
+                        If you want to <Bold>open</Bold> a message in full screen, you first need to select it
                         and then press <Bold>Right click</Bold>. <LineBreak/>
-                        You can then see much more detailed informations on a message. You can use the three buttons
+                        You can then see much more detailed information on a message. You can use the three buttons
                         at the top of that screen to either
                         <Span Foreground="Red" FontWeight="SemiBold">Go back</Span> to the data grid, or navigate
                         to the
@@ -125,7 +129,7 @@
                         Statistics:
                     </Paragraph>
                     <Paragraph FontSize="18" FontFamily="SegoeUI">
-                        You can then read some informations and <Bold>Statistics</Bold> if you click
+                        You can then read some information and <Bold>Statistics</Bold> if you click
                         on the <Bold>Statistics</Bold> button of the side <Bold>Menu</Bold>.
                     </Paragraph> 
                 </FlowDocument>

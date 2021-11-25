@@ -8,6 +8,7 @@
              Foreground="White"
              Background="#2A2A2C"
              d:DesignHeight="450" d:DesignWidth="800">
+    <!--View with controls to import messages from external sources-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>

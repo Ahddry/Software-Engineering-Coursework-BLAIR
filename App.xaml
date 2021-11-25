@@ -7,6 +7,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!--Ressource Dictionnary of the App-->
                 <ResourceDictionary Source="UI/Theme/MenuButton.xaml"/>
                 <ResourceDictionary Source="UI/Theme/DataGrid.xaml"/>
             </ResourceDictionary.MergedDictionaries>

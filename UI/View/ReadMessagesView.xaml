@@ -8,6 +8,7 @@
              Foreground="White"
              Background="#2A2A2C"
              d:DesignHeight="450" d:DesignWidth="800">
+    <!--View to read messages from a datagrid-->
     <Grid>
         <DataGrid ItemsSource="{Binding Messages}" SelectedItem="{Binding SelectedMessage}" IsReadOnly="True" 
                       AutoGenerateColumns="False" ColumnHeaderStyle="{StaticResource HeaderStyle}" 
