@@ -60,7 +60,7 @@ This project was a great opportunity to learn about the WPF framework, and to pr
 
 ## Installation
 
-You can download the project from the [download page](https://downgit.github.io/#/home?url=https://github.com/Ahddry/Software-Engineering-Coursework-BLAIR/blob/main/Software-Engineering-Coursework-BLAIR.zip), or compile it yourself from the source code with Visual Studio. The project was developed using Visual Studio 2019, and it should work with any version of Visual Studio 2019 or higher. You can download Visual Studio from [here](https://visualstudio.microsoft.com/downloads/).
+You can download the project from the [download page](https://github.com/Ahddry/Software-Engineering-Coursework-BLAIR/raw/main/Software-Engineering-Coursework-BLAIR.zip), or compile it yourself from the source code with Visual Studio. The project was developed using Visual Studio 2019, and it should work with any version of Visual Studio 2019 or higher. You can download Visual Studio from [here](https://visualstudio.microsoft.com/downloads/).
 
 ## Contributing
 
