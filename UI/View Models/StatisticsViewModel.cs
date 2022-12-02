@@ -57,7 +57,7 @@ namespace Coursework1.UI.View_Models
             existingNoI.Add("Intelligence");
             existingNoI.Add("Cash Loss");
             #endregion
-            string path = @$"{ System.IO.Directory.GetCurrentDirectory()}\..\..\..\Saved Messages\";
+            string path = @$"{ System.IO.Directory.GetCurrentDirectory()}\Saved Messages\";
             foreach (string file in Directory.EnumerateFiles(path, "*.json")) //Read all the saved messages
             {
                 string content = File.ReadAllText(file);

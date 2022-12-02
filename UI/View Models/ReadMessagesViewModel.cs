@@ -31,7 +31,7 @@ namespace Coursework1.UI.View_Models
         {
             ReadMessages = new();
             //Read all the files in the Saved Messages folder
-            string path = @$"{ System.IO.Directory.GetCurrentDirectory()}\..\..\..\Saved Messages\";
+            string path = @$"{ System.IO.Directory.GetCurrentDirectory()}\Saved Messages\";
             #region ReadFiles
             OpenItemCommand = new RelayCommand(OpenItem);
             //Source:

@@ -88,7 +88,7 @@ namespace Coursework1.UI.View_Models
         /// </summary>
         public void ImportAllButtonClick()
         {
-            string path = @$"{ System.IO.Directory.GetCurrentDirectory()}\..\..\..\Import Messages\";
+            string path = @$"{ System.IO.Directory.GetCurrentDirectory()}\Import Messages\";
             foreach (string file in Directory.EnumerateFiles(path))
             {
                 ChosenFilesList.Add(file);

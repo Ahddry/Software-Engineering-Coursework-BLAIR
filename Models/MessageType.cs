@@ -56,7 +56,7 @@ namespace Coursework1.Models
             ser.WriteObject(ms, this);
             byte[] json = ms.ToArray();
             ms.Close();
-            string path = @$"\..\..\..\Saved Messages\{SaveTime.Year}.{SaveTime.Month}.{SaveTime.Day}-{SaveTime.Hour}.{SaveTime.Minute}.{SaveTime.Second}_{Header}.json";
+            string path = @$"\Saved Messages\{SaveTime.Year}.{SaveTime.Month}.{SaveTime.Day}-{SaveTime.Hour}.{SaveTime.Minute}.{SaveTime.Second}_{Header}.json";
             File.WriteAllBytes(path, json);
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Coursework1.Models
         public virtual string GetPath()
         {
             DateTime dateTime = Convert.ToDateTime(Date);
-            string path = @$"{System.IO.Directory.GetCurrentDirectory()}\..\..\..\Saved Messages\{dateTime.Year}.{dateTime.Month}.{dateTime.Day}-{dateTime.Hour}.{dateTime.Minute}.{dateTime.Second}_{Header}.json";
+            string path = @$"{System.IO.Directory.GetCurrentDirectory()}\Saved Messages\{dateTime.Year}.{dateTime.Month}.{dateTime.Day}-{dateTime.Hour}.{dateTime.Minute}.{dateTime.Second}_{Header}.json";
             return path;
         }
     }
